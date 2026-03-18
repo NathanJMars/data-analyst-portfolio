@@ -1775,8 +1775,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='950' minheight='950' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='29' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98306' id='28' param='vert' type-v2='layout-flow' w='99064' x='468' y='847'>
+            <zone h='100000' id='31' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98306' id='30' param='vert' type-v2='layout-flow' w='99064' x='468' y='847'>
                 <zone fixed-size='280' h='49147' id='3' is-fixed='true' name='Gross Sales Over Time by Epidemic Status' w='99064' x='468' y='847'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1884,8 +1884,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='850' minheight='850' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='14' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98306' id='13' param='vert' type-v2='layout-flow' w='99064' x='468' y='847'>
+            <zone h='100000' id='16' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98306' id='15' param='vert' type-v2='layout-flow' w='99064' x='468' y='847'>
                 <zone fixed-size='280' h='74153' id='3' is-fixed='true' name='Sales and Units Sold by Discount and Promotion Status' w='75658' x='468' y='847'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1938,7 +1938,7 @@
     </dashboard>
   </dashboards>
   <windows source-height='72'>
-    <window class='dashboard' maximized='true' name='Overall Sales Breakdown'>
+    <window class='dashboard' name='Overall Sales Breakdown'>
       <viewpoints>
         <viewpoint name='Gross Sales Over Time by Epidemic Status'>
           <zoom type='entire-view' />
@@ -1953,7 +1953,7 @@
       <active id='-1' />
       <simple-id uuid='{6E752DE4-CEBF-4AD0-A664-6DF549DBC2A8}' />
     </window>
-    <window class='dashboard' name='Sales by Discout &amp; Promotional Status'>
+    <window class='dashboard' maximized='true' name='Sales by Discout &amp; Promotional Status'>
       <viewpoints>
         <viewpoint name='Count of Sales by Promotion Status'>
           <zoom type='entire-view' />
@@ -2859,7 +2859,7 @@
       U9P86oGwuclhZqJpPvj4ymv7eg7yxFjvwkHrBt3peYF2oxdo3d+0zqYhUCkV5a9/9TWpkrxD
       HZ0mJtXBK2sAQ1cZ7h/m6LkzWHlqhSgqDlwuOzZpbcBqJxbIeHG0br9iLpDx5sfZhpk634hX
       XhlBtHDy3Jmnnw2diu7ERpFCIk/BJWGTPBs9HdvZdbnd6e0VO3Fu9oL1G3OnyyHswdI+W340
-      rVshahuayOZKhIM7Z4Uw2wDVxW5ZIfaiDbDlu+xZK4THvT6J085cWLMXyGS3qIObt6MAAA5g
+      rVshahuayOZKhIM7Z4Uw2wDVxW5ZIfaiDbDlu+xZK4THvT6J085cWLMXyGS3qIObt6MAAA5a
       SURBVMrRpv0+cGTybsilDAMjk+iaQiabByCfTaNoMD4x/sr9lqMzZIqvr0UWZsYpKaBrym6u
       E2xisjWGH/TyYC5DwFriL35zl3/+z/4pv/urP8V37COWRm4zPDTB6RNtjEzMc+XjH5JfHGdo
       bpWwtcL0aj/dp05TjM8i2wK4jByGLUA+sYgz3IilnODBowH+4R8fJbE0U501wH5vNJq8CwZD
@@ -2927,8 +2927,8 @@
       aIaA1fLq0WNNVVB1AbvN8kz6InJFxmqzAwaapmOxSBiGgaKo2GxWMAxUTdt0idVKuYzFbkfa
       8J0IaJqGKEmvHGrXNAXdELFapLVtRQnDUJFlHYfDhiLLSFbrSz4VXdcAEVEUMAwdXQdJhN7b
       31DbeZHWiG/tzBpPyyHLMlarDUHgybFEDEPHQKCcTfB4eIJsUeGzH31MuVTC5nBsHDefWuH2
-      o1F+75MPX3lOTTbHHAk2OdSY3aAmh5odc4Ouz4t/UN7vNTmY7KgdOpPJbOu6ASYm2435eDY5
-      1JgCMDnU/P934ASvEI9gnQAAAABJRU5ErkJggg==
+      o1F+75MPX3lOTTbHHAk2OdSY3aAmh5odE8BBmBff5OCzozVAqWT2Z5tUN2YIZHKoMQVgcqj5
+      /wGgswSZmnGRDwAAAABJRU5ErkJggg==
     </thumbnail>
   </thumbnails>
 </workbook>

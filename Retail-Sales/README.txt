@@ -34,12 +34,6 @@ This grain was important to validate early, as it was determined during validati
 
 ## Workflow
 
-### Raw Table Creation
-A raw landing table was created in PostgreSQL to receive the CSV import. All columns were initially defined as `TEXT` to simplify ingestion and avoid early type conflicts during import.
-
-### Cleaning and Type Conversion
-A cleaned table was created from the raw import table using explicit type conversion for dates, numeric measures, and boolean fields. This produced a structured analysis-ready table while preserving the raw imported dataset separately.
-
 ### Validation
 Before analysis, the cleaned table was checked for structural and logical consistency.
 
@@ -56,6 +50,7 @@ Validation checks included:
 - confirming seasonality values aligned with the calendar date
 
 
+
 ### Analytical Query Development
 SQL queries were developed to answer business-facing questions around:
 - sales performance over time
@@ -64,6 +59,17 @@ SQL queries were developed to answer business-facing questions around:
 - epidemic and seasonal context
 
 These queries were also used to prepare analysis-ready outputs for dashboarding.
+
+###SQL Techniques Used
+
+Raw CSV ingestion into a PostgreSQL landing table
+- Data type conversion and cleaning into an analysis-ready table
+- Grain validation at the date, store_id, product_id level
+- Data quality checks for nulls, negatives, duplicates, and category consistency
+- GROUP BY aggregations for revenue, discount, and sales summaries
+- CASE logic for promotion, epidemic, and seasonal comparisons
+- Date-based trend analysis for time series reporting
+- Export of summary tables for Tableau dashboarding
 
 ### Dashboard Creation
 The final outputs were visualized in Tableau Public through two dashboards:

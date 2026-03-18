@@ -1,55 +1,3 @@
-CREATE VIEW retail.avg_price_by_promotion AS
-SELECT
-    promotion,
-    AVG(units_sold) AS avg_units_sold,
-    AVG(demand) AS avg_demand,
-    AVG(inventory_level) AS avg_inventory_level,
-    AVG(price) AS avg_price,
-    AVG(discount) AS avg_discount,
-	AVG(units_sold * price) AS avg_gross_sales,
-	AVG(competitor_pricing) AS avg_competitor_price
-FROM retail.sales_data_clean
-GROUP BY promotion
-ORDER BY promotion;
-
-CREATE VIEW retail.avg_price_by_date_promotion AS
-SELECT
-    date,
-    promotion,
-    ROUND(AVG(price), 2) AS avg_price,
-	ROUND(AVG(competitor_pricing),2) AS avg_competitor_price
-FROM retail.sales_data_clean
-GROUP BY date, promotion
-ORDER BY date, promotion;
-
-CREATE VIEW retail._sales_over_time AS
-SELECT
-    date,
-    ROUND(SUM(units_sold * price), 2) AS total_gross_sales
-FROM retail.sales_data_clean
-GROUP BY date
-ORDER BY date;
-
-CREATE VIEW retail.gross_sales_by_category AS
-SELECT
-    category,
-    ROUND(SUM(units_sold * price), 2) AS total_gross_sales,
-    ROUND(AVG(units_sold)::numeric, 2) AS avg_units_sold,
-    ROUND(AVG(demand)::numeric, 2) AS avg_demand
-FROM retail.sales_data_clean
-GROUP BY category
-ORDER BY total_gross_sales DESC;
-
-CREATE VIEW retail.gross_sales_by_region AS
-SELECT
-    region,
-    ROUND(SUM(units_sold * price), 2) AS total_gross_sales,
-    ROUND(AVG(units_sold)::numeric, 2) AS avg_units_sold,
-    ROUND(AVG(demand)::numeric, 2) AS avg_demand
-FROM retail.sales_data_clean
-GROUP BY region
-ORDER BY total_gross_sales DESC;
-
 SELECT
     date,
     epidemic,
@@ -58,14 +6,147 @@ FROM retail.sales_data_clean
 GROUP BY date, epidemic
 ORDER BY date, epidemic;
 
+--Sale information by promotion status--
 SELECT
     promotion,
     ROUND(SUM(units_sold * price), 2) AS total_gross_sales,
     ROUND(AVG(units_sold * price), 2) AS avg_gross_sales,
+	ROUND(AVG(units_sold), 2) AS avg_units_sold,
 	ROUND(AVG(discount), 2) AS avg_discount
 FROM retail.sales_data_clean
 GROUP BY promotion
 ORDER BY promotion;
 
-select *
-from retail.sales_data_clean;
+--Same as above with added category--
+SELECT
+    category,
+	Promotion,
+    ROUND(AVG(units_sold), 2) AS avg_units_sold,
+    ROUND(AVG(units_sold * Price), 2) AS avg_sales_revenue,
+    ROUND(AVG(discount), 2) AS avg_discount_pct,
+    COUNT(*) AS row_count
+FROM retail.sales_data_clean
+GROUP BY category,promotion
+ORDER BY category,promotion;
+
+
+-- Promotion and Discount Analysis
+
+--Average Sales by promotion, discount--
+SELECT
+    store_id,
+	promotion,
+    ROUND(AVG(units_sold), 2) AS avg_units_sold,
+    ROUND(AVG(units_sold * Price), 2) AS avg_sales_revenue,
+    ROUND(AVG(discount), 2) AS avg_discount_pct,
+    COUNT(*) AS row_count
+FROM retail.sales_data_clean
+WHERE epidemic = false
+GROUP BY store_id,promotion
+ORDER BY store_id,promotion;
+
+
+--Non epidemic sales by discount rate, promotion status--
+WITH discount_analysis AS (
+    SELECT
+        promotion,
+        discount,
+        units_sold * Price AS sales_revenue,
+        units_sold
+    FROM retail.sales_data_clean
+	WHERE epidemic = false
+)
+SELECT
+    promotion,
+    discount,
+    ROUND(AVG(sales_revenue), 2) AS avg_sales_revenue,
+    ROUND(AVG(units_sold), 2) AS avg_units_sold,
+    COUNT(*) AS row_count
+FROM discount_analysis
+GROUP BY promotion, discount
+ORDER BY promotion, discount;
+
+
+SELECT
+    category,
+    promotion,
+    ROUND(AVG(discount), 2) AS avg_discount_pct,
+    ROUND(AVG(units_sold * price))  AS avg_sales_revenue,
+    ROUND(AVG(units_sold), 2) AS avg_units_sold,
+    COUNT(*) AS row_count
+FROM retail.sales_data_clean
+GROUP BY category, promotion
+ORDER BY category, promotion;
+
+SELECT
+    category,
+    discount,
+	promotion,
+    ROUND(AVG(units_sold * price)) AS avg_sales_revenue,
+	ROUND(SUM(units_sold * price)) AS gross_sales_revenue,
+    ROUND(AVG(units_sold), 2) AS avg_units_sold,
+    COUNT(*) AS row_count
+FROM retail.sales_data_clean
+WHERE epidemic = false
+GROUP BY category, discount,promotion
+ORDER BY category, discount,promotion;
+
+
+-- Scenario Analysis: estimate revenue when converting 25% discount sales to 10% -- 
+WITH base_sales AS (
+    SELECT
+        discount,
+        promotion,
+        units_sold * price AS sales_revenue
+    FROM retail.sales_data_clean
+    WHERE epidemic = false
+),
+promo_discount_summary AS (
+    SELECT
+        discount,
+        AVG(sales_revenue) AS avg_sales_revenue,
+        COUNT(*) AS row_count
+    FROM base_sales
+    WHERE promotion = true
+      AND discount IN (10, 25)
+    GROUP BY discount
+),
+pivoted AS (
+    SELECT
+        MAX(CASE WHEN discount = 10 THEN avg_sales_revenue END) AS avg_rev_10_promo,
+        MAX(CASE WHEN discount = 25 THEN avg_sales_revenue END) AS avg_rev_25_promo,
+        MAX(CASE WHEN discount = 25 THEN row_count END) AS row_count_25_promo
+    FROM promo_discount_summary
+),
+all_sales_total AS (
+    SELECT
+        SUM(sales_revenue) AS total_revenue_all_non_epidemic
+    FROM base_sales
+),
+scenario AS (
+    SELECT
+        p.avg_rev_10_promo,
+        p.avg_rev_25_promo,
+        p.row_count_25_promo,
+        a.total_revenue_all_non_epidemic,
+        (p.avg_rev_25_promo * p.row_count_25_promo) AS current_total_revenue_25_promo,
+        (p.avg_rev_10_promo * p.row_count_25_promo) AS projected_total_revenue_as_10_promo
+    FROM pivoted p
+    CROSS JOIN all_sales_total a
+)
+SELECT
+    ROUND(avg_rev_25_promo, 2) AS current_avg_revenue_25_promo,
+    ROUND(avg_rev_10_promo, 2) AS projected_avg_revenue_10_promo,
+    row_count_25_promo,
+    ROUND(current_total_revenue_25_promo, 2) AS current_total_revenue_25_promo,
+    ROUND(projected_total_revenue_as_10_promo, 2) AS projected_total_revenue_as_10_promo,
+    ROUND(projected_total_revenue_as_10_promo - current_total_revenue_25_promo, 2) AS net_increased_revenue,
+    ROUND(total_revenue_all_non_epidemic, 2) AS total_revenue_all_non_epidemic,
+    ROUND(
+        100.0 * (projected_total_revenue_as_10_promo - current_total_revenue_25_promo)
+        / NULLIF(total_revenue_all_non_epidemic, 0),
+        4
+    ) AS pct_increased_revenue_of_all_sales
+FROM scenario;
+
+
