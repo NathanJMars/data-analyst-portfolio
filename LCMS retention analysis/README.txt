@@ -4,6 +4,7 @@
 This project evaluated whether LCMS retention time could be predicted from RDKit-derived molecular descriptors and whether the resulting models would recover descriptor relationships consistent with established chromatographic theory. Because reversed-phase LC retention is known to be strongly influenced by lipophilicity and related polarity effects, the analysis focused not only on predictive performance, but also on whether the descriptor set surfaced those expected drivers.
 
 ## Dataset Summary
+The notebook expects the dataset archive to remain at data/descriptors.zip within the project folder. 
 The dataset contains one row per molecule. Key fields include:
 
 - `rt` (retention time target)
@@ -38,7 +39,6 @@ This project therefore focused on descriptor-based modeling rather than relation
 ## Workflow
 
 ### Data Inspection
-Before modeling, the dataset was inspected for structure and quality.
 
 Inspection steps included:
 - confirming row and column counts
@@ -48,7 +48,6 @@ Inspection steps included:
 - reviewing summary statistics for the target variable
 
 ### Target Exploration
-Retention time (`rt`) was explored before modeling to understand its distribution and spread.
 
 This included:
 - summary statistics for `rt`
@@ -56,7 +55,6 @@ This included:
 - review of transformed target behavior for comparison
 
 ### Descriptor Screening
-A first-pass screening step was used to identify descriptors most associated with retention time.
 
 Screening steps included:
 - removing zero-variance descriptor columns
@@ -65,7 +63,6 @@ Screening steps included:
 - plotting the strongest correlation signals
 
 ### Model Development
-Models were developed to compare interpretable linear baselines against a more flexible non-linear approach.
 
 Models tested:
 - Mean baseline
@@ -153,3 +150,9 @@ At a high level, the results support expected reversed-phase LC behavior: compou
 - non-linear ensemble regression with Random Forest
 - coefficient and feature-importance interpretation
 - residual and bin-based error analysis
+
+## Repository Structure
+- `LCMS Retention Modelling.ipynb` — main modeling notebook
+- `LCMS Summary Presentation.pdf` — project summary document
+- `README.txt` — project overview, workflow, findings, and limitations
+- 'data/descriptors.zip` — source dataset archive used for the notebook
