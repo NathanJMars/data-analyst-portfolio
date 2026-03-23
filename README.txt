@@ -6,11 +6,11 @@ This portfolio showcases data analysis projects built with Excel, PostgreSQL, Ta
 ## Skills Demonstrated
 - Excel analysis and KPI reporting
 - SQL / PostgreSQL querying
-- data cleaning and validation
-- exploratory data analysis
-- dashboard development
-- business recommendation framing
-- presentation-ready reporting
+- Data cleaning and validation
+- Exploratory data analysis
+- Dashboard development
+- Business recommendation framing
+- Presentation-ready reporting
 - QA and monitoring workflows
 
 ## Projects
@@ -49,21 +49,11 @@ This project analyzes QC blend adjustment activity in a manufacturing environmen
 - manufacturing-focused business analysis
 
 ## Repository Structure
-data-analyst-portfolio/  
-├── Retail-Sales/  
-│   ├── README.txt  
-│   ├── Retail Sales Analysis_ Pricing, Promotions, and Revenue Optimization.pdf  
-│   ├── Sales Dashboard-overview.twb  
-│   └── Sales Dashboard- Promotional Status.twb  
-│  
-├── LCMS retention analysis/  
-│   ├── README.txt  
-│   ├── LCMS Retention Modelling.ipynb  
-│   └── LCMS Summary Presentation.pdf  
-│  
-├── Manufacturing Analysis/  
-│   ├── README.txt  
-│   └── QC Blend Adjustment Monitoring.xlsx  
+`data-analyst-portfolio/`
+`├── Retail-Sales/`
+`├── LCMS retention analysis/`
+`└── Manufacturing Analysis/`
+
 
 ## Tools Used
 - Microsoft Excel
