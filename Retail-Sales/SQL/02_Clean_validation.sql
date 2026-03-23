@@ -20,7 +20,7 @@ SELECT
 FROM retail.sales_data_raw;
 
 
---verifying distinct values across categorical columns--
+--Review distinct values across categorical columns--
 SELECT DISTINCT category
 FROM retail.sales_data_clean
 ORDER BY category;
@@ -38,7 +38,7 @@ FROM retail.sales_data_clean
 ORDER BY seasonality;
 
 
---Validation of categorical data being consistent across dataset--
+--Validate categorical consistency across related identifiers--
 SELECT
     store_id,
     COUNT(DISTINCT region) AS region_count
@@ -120,7 +120,8 @@ SELECT
 FROM retail.sales_data_clean
 GROUP BY date, store_id, product_id
 HAVING COUNT(*) > 1;
-	
+
+--Review rows that violate expected business bounds--
 SELECT *
 FROM retail.sales_data_clean
 WHERE

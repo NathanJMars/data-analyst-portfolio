@@ -1,7 +1,7 @@
 # LCMS Retention Modeling with Python
 
 ## Project Overview
-This project evaluated whether LCMS retention time could be predicted from RDKit-derived molecular descriptors and whether the resulting models would recover descriptor relationships consistent with established chromatographic theory. Because reversed-phase LC retention is known to be strongly influenced by lipophilicity and related polarity effects, the analysis focused not only on predictive performance, but also on whether the descriptor set surfaced those expected drivers.
+This project evaluates whether LCMS retention time can be predicted from RDKit-derived molecular descriptors and whether the resulting models recover descriptor relationships consistent with expected chromatographic behavior.
 
 ## Dataset Summary
 The notebook expects the dataset archive to remain at data/descriptors.zip within the project folder. 

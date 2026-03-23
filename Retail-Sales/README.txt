@@ -86,11 +86,16 @@ This project produced the following technical outputs:
 - analytical SQL query set
 - Tableau dashboards built from final analytical outputs
 
+## Limitations
+- This analysis is observational and does not prove causality.
+- Promotion and pricing comparisons may still reflect timing, product mix, or store-level differences.
+- Recommendation scenarios are directional estimates based on historical observed performance.
+
 ## Repository Structure
-• `SQL/01_create_raw_table.sql` — raw landing table creation
-• `SQL/02_Clean_validation.sql` — cleaned table creation and validation checks
-• `SQL/03_data_analysis.sql` — analytical SQL queries used for dashboards and recommendations
-• `Sales Dashboard-overview.twb` — Tableau workbook for high-level sales context
-• `Sales Dashboard- Promotional Status.twb` — Tableau workbook for promotion and discount analysis
-• `Retail Sales Analysis_ Pricing, Promotions, and Revenue Optimization.pdf` — summary presentation
-• `README.txt` — project overview, workflow, findings, and limitations
+- `SQL/01_create_raw_table.sql` — raw landing table creation
+- `SQL/02_Clean_validation.sql` — cleaned table creation and validation checks
+- `SQL/03_data_analysis.sql` — analytical SQL queries used for dashboards and recommendations
+- `Sales Dashboard-overview.twb` — Tableau workbook for high-level sales context
+- `Sales Dashboard- Promotional Status.twb` — Tableau workbook for promotion and discount analysis
+- `Retail Sales Analysis_ Pricing, Promotions, and Revenue Optimization.pdf` — summary presentation
+- `README.txt` — project overview, workflow, findings, and limitations

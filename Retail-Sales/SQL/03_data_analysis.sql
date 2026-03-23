@@ -17,7 +17,7 @@ FROM retail.sales_data_clean
 GROUP BY promotion
 ORDER BY promotion;
 
---Sales summary by category and promotion status--
+--Full-dataset category and promotion summary--
 SELECT
     category,
 	promotion,
@@ -113,14 +113,14 @@ promo_discount_summary AS (
 ),
 pivoted AS (
     SELECT
-        MAX(CASE WHEN discount = 10 THEN avg_sales_revenue END) AS avg_rev_10_promo,
-        MAX(CASE WHEN discount = 25 THEN avg_sales_revenue END) AS avg_rev_25_promo,
+        MAX(CASE WHEN discount = 10 THEN avg_gross_sales END) AS avg_rev_10_promo,
+        MAX(CASE WHEN discount = 25 THEN avg_gross_sales END) AS avg_rev_25_promo,
         MAX(CASE WHEN discount = 25 THEN row_count END) AS row_count_25_promo
     FROM promo_discount_summary
 ),
 all_sales_total AS (
     SELECT
-        SUM(sales_revenue) AS total_revenue_all_non_epidemic
+        SUM(gross_sales) AS total_revenue_all_non_epidemic
     FROM base_sales
 ),
 scenario AS (
