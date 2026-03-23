@@ -61,7 +61,7 @@ GROUP BY date
 HAVING COUNT(DISTINCT seasonality) > 1;
 
 --Category count returns multiple counts, query below verifies product_id is consistent within store_ids--
---No return here shows that product_id is consistent within a store but not across all stores (room for improvement)--
+-- No returned rows indicate that product identity is consistent within each store_id + product_id combination--
 SELECT
     store_id,
     product_id,
@@ -126,7 +126,3 @@ FROM retail.sales_data_clean
 WHERE
     discount > 100
     OR (inventory_level = 0 AND units_sold > 0);
-
-
-SELECT * 
-FROM retail.sales_data_clean;

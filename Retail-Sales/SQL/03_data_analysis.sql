@@ -6,7 +6,7 @@ FROM retail.sales_data_clean
 GROUP BY date, epidemic
 ORDER BY date, epidemic;
 
---Sale information by promotion status--
+--Overall sales summary by promotion status--
 SELECT
     promotion,
     ROUND(SUM(units_sold * price), 2) AS total_gross_sales,
@@ -17,12 +17,12 @@ FROM retail.sales_data_clean
 GROUP BY promotion
 ORDER BY promotion;
 
---Same as above with added category--
+--Sales summary by category and promotion status--
 SELECT
     category,
-	Promotion,
+	promotion,
     ROUND(AVG(units_sold), 2) AS avg_units_sold,
-    ROUND(AVG(units_sold * Price), 2) AS avg_sales_revenue,
+    ROUND(AVG(units_sold * price), 2) AS avg_gross_sales,
     ROUND(AVG(discount), 2) AS avg_discount_pct,
     COUNT(*) AS row_count
 FROM retail.sales_data_clean
@@ -30,14 +30,14 @@ GROUP BY category,promotion
 ORDER BY category,promotion;
 
 
--- Promotion and Discount Analysis
+-- Promotion and Discount Analysis --
 
---Average Sales by promotion, discount--
+--Store-level sales summary by promotion status--
 SELECT
     store_id,
 	promotion,
     ROUND(AVG(units_sold), 2) AS avg_units_sold,
-    ROUND(AVG(units_sold * Price), 2) AS avg_sales_revenue,
+    ROUND(AVG(units_sold * price), 2) AS avg_gross_sales,
     ROUND(AVG(discount), 2) AS avg_discount_pct,
     COUNT(*) AS row_count
 FROM retail.sales_data_clean
@@ -51,7 +51,7 @@ WITH discount_analysis AS (
     SELECT
         promotion,
         discount,
-        units_sold * Price AS sales_revenue,
+        units_sold * price AS gross_sales,
         units_sold
     FROM retail.sales_data_clean
 	WHERE epidemic = false
@@ -59,7 +59,7 @@ WITH discount_analysis AS (
 SELECT
     promotion,
     discount,
-    ROUND(AVG(sales_revenue), 2) AS avg_sales_revenue,
+    ROUND(AVG(gross_sales), 2) AS avg_gross_sales,
     ROUND(AVG(units_sold), 2) AS avg_units_sold,
     COUNT(*) AS row_count
 FROM discount_analysis
@@ -71,7 +71,7 @@ SELECT
     category,
     promotion,
     ROUND(AVG(discount), 2) AS avg_discount_pct,
-    ROUND(AVG(units_sold * price))  AS avg_sales_revenue,
+    ROUND(AVG(units_sold * price))  AS avg_gross_sales,
     ROUND(AVG(units_sold), 2) AS avg_units_sold,
     COUNT(*) AS row_count
 FROM retail.sales_data_clean
@@ -82,8 +82,8 @@ SELECT
     category,
     discount,
 	promotion,
-    ROUND(AVG(units_sold * price)) AS avg_sales_revenue,
-	ROUND(SUM(units_sold * price)) AS gross_sales_revenue,
+    ROUND(AVG(units_sold * price)) AS avg_gross_sales,
+	ROUND(SUM(units_sold * price)) AS total_gross_sales,
     ROUND(AVG(units_sold), 2) AS avg_units_sold,
     COUNT(*) AS row_count
 FROM retail.sales_data_clean
@@ -97,14 +97,14 @@ WITH base_sales AS (
     SELECT
         discount,
         promotion,
-        units_sold * price AS sales_revenue
+        units_sold * price AS gross_sales
     FROM retail.sales_data_clean
     WHERE epidemic = false
 ),
 promo_discount_summary AS (
     SELECT
         discount,
-        AVG(sales_revenue) AS avg_sales_revenue,
+        AVG(gross_sales) AS avg_gross_sales,
         COUNT(*) AS row_count
     FROM base_sales
     WHERE promotion = true

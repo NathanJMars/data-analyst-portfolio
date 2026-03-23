@@ -60,21 +60,21 @@ SQL queries were developed to answer business-facing questions around:
 
 These queries were also used to prepare analysis-ready outputs for dashboarding.
 
-###SQL Techniques Used
+### SQL Techniques Used
 
-Raw CSV ingestion into a PostgreSQL landing table
+- Raw CSV ingestion into a PostgreSQL landing table
 - Data type conversion and cleaning into an analysis-ready table
 - Grain validation at the date, store_id, product_id level
 - Data quality checks for nulls, negatives, duplicates, and category consistency
-- GROUP BY aggregations for revenue, discount, and sales summaries
-- CASE logic for promotion, epidemic, and seasonal comparisons
+- 'GROUP BY' aggregations for revenue, discount, and sales summaries
+- 'CASE' logic for promotion, epidemic, and seasonal comparisons
 - Date-based trend analysis for time series reporting
 - Export of summary tables for Tableau dashboarding
 
 ### Dashboard Creation
 The final outputs were visualized in Tableau Public through two dashboards:
 - a high-level sales overview dashboard
-- a drivers/context dashboard focused on promotion, epidemic status, and seasonality
+- a drivers/context dashboard focused on promotion status and discount brackets.
 
 
 ## Technical Outputs
@@ -85,3 +85,12 @@ This project produced the following technical outputs:
 - validation query set
 - analytical SQL query set
 - Tableau dashboards built from final analytical outputs
+
+## Repository Structure
+• `SQL/01_create_raw_table.sql` — raw landing table creation
+• `SQL/02_Clean_validation.sql` — cleaned table creation and validation checks
+• `SQL/03_data_analysis.sql` — analytical SQL queries used for dashboards and recommendations
+• `Sales Dashboard-overview.twb` — Tableau workbook for high-level sales context
+• `Sales Dashboard- Promotional Status.twb` — Tableau workbook for promotion and discount analysis
+• `Retail Sales Analysis_ Pricing, Promotions, and Revenue Optimization.pdf` — summary presentation
+• `README.txt` — project overview, workflow, findings, and limitations
