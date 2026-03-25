@@ -17,7 +17,7 @@ SELECT
     "Group" AS product_group
 FROM manufacturing.blend_analysis_clean;
 
-
+--Group Ranking by Adjustment Rate--
 WITH group_summary AS (
     SELECT
         product_group,
@@ -39,6 +39,8 @@ SELECT
 FROM group_summary
 ORDER BY adjustment_rank, product_group;
 
+
+--Ranked Tank Analysis by Adjustment Rate (overall)--
 WITH tank_summary AS (
     SELECT
         tank_id,
@@ -68,6 +70,65 @@ WHERE total_batches >= '5'
 ORDER BY total_adjustment_rank, tank_id;
 
 
+--Ranked Tank Analysis by Adjustment Rate (Volume specific)--
+WITH tank_summary AS (
+    SELECT
+        tank_id,
+        area,
+        tank_size,
+        COUNT(*) AS total_batches,
+        SUM(number_of_adjustments) AS total_adjustments,
+        SUM(CASE WHEN number_of_adjustments > 0 THEN 1 ELSE 0 END) AS adjusted_batches,
+        AVG(number_of_adjustments) AS avg_adjustments_per_batch
+    FROM manufacturing.blend_analysis_analysis_v
+	WHERE tank_id IS NOT NULL
+    GROUP BY tank_id, area, tank_size
+)
+SELECT
+    tank_id,
+    area,
+    tank_size,
+    total_batches,
+    total_adjustments,
+    adjusted_batches,
+    ROUND(100.0 * adjusted_batches / NULLIF(total_batches, 0), 2) AS adjusted_batch_rate_pct,
+    ROUND(avg_adjustments_per_batch, 2) AS avg_adjustments_per_batch,
+    RANK() OVER (ORDER BY total_adjustments DESC) AS total_adjustment_rank,
+    RANK() OVER (
+        ORDER BY 100.0 * adjusted_batches / NULLIF(total_batches, 0) DESC
+    ) AS adjusted_batch_rate_rank
+FROM tank_summary
+WHERE total_batches >= '5'
+ORDER BY adjusted_batch_rate_rank,tank_id, tank_size
+
+
+--Ranked Area analysis by adjustment rate--
+WITH area_summary AS (
+    SELECT
+        area,
+        COUNT(*) AS total_batches,
+        SUM(number_of_adjustments) AS total_adjustments,
+        SUM(CASE WHEN number_of_adjustments > 0 THEN 1 ELSE 0 END) AS adjusted_batches,
+        AVG(number_of_adjustments) AS avg_adjustments_per_batch
+    FROM manufacturing.blend_analysis_analysis_v
+    GROUP BY area
+)
+SELECT
+    area,
+    total_batches,
+    total_adjustments,
+    adjusted_batches,
+    ROUND((100.0 * adjusted_batches / NULLIF(total_batches, 0))::numeric, 2) AS adjusted_batch_rate_pct,
+    ROUND(avg_adjustments_per_batch::numeric, 2) AS avg_adjustments_per_batch,
+    RANK() OVER (ORDER BY total_adjustments DESC) AS total_adjustment_rank,
+    RANK() OVER (
+        ORDER BY (100.0 * adjusted_batches / NULLIF(total_batches, 0)) DESC
+    ) AS adjusted_batch_rate_rank
+FROM area_summary
+ORDER BY total_adjustment_rank, area;
+
+
+--30 day Rolling Average of Adjustment Rate--
 WITH daily_summary AS (
     SELECT
         production_date,
@@ -99,37 +160,9 @@ SELECT
     )::numeric, 2) AS rolling_30_day_avg_adjusted_rate_pct
 FROM daily_summary
 ORDER BY production_date;
--------
-WITH tank_summary AS (
-    SELECT
-        tank_id,
-        area,
-        tank_size,
-        COUNT(*) AS total_batches,
-        SUM(number_of_adjustments) AS total_adjustments,
-        SUM(CASE WHEN number_of_adjustments > 0 THEN 1 ELSE 0 END) AS adjusted_batches,
-        AVG(number_of_adjustments) AS avg_adjustments_per_batch
-    FROM manufacturing.blend_analysis_analysis_v
-	WHERE tank_id IS NOT NULL
-    GROUP BY tank_id, area, tank_size
-)
-SELECT
-    tank_id,
-    area,
-    tank_size,
-    total_batches,
-    total_adjustments,
-    adjusted_batches,
-    ROUND(100.0 * adjusted_batches / NULLIF(total_batches, 0), 2) AS adjusted_batch_rate_pct,
-    ROUND(avg_adjustments_per_batch, 2) AS avg_adjustments_per_batch,
-    RANK() OVER (ORDER BY total_adjustments DESC) AS total_adjustment_rank,
-    RANK() OVER (
-        ORDER BY 100.0 * adjusted_batches / NULLIF(total_batches, 0) DESC
-    ) AS adjusted_batch_rate_rank
-FROM tank_summary
-ORDER BY total_adjustment_rank, tank_id;
 
 
+--Overview of Blend Metrics by Month--
 WITH monthly_summary AS (
     SELECT
         DATE_TRUNC('month', production_date) AS production_month,
@@ -168,6 +201,7 @@ FROM monthly_summary
 ORDER BY production_month;
 
 
+--Pareto Breakdown: Ranked Group Analysis by Adjustment--
 WITH group_summary AS (
     SELECT
         product_group,
@@ -198,26 +232,50 @@ FROM group_summary
 ORDER BY total_adjustments DESC, product_group;
 
 
-WITH area_summary AS (
+--Pareto Breakdown: Top 5 Adjusted tanks by volume--
+WITH tank_size_summary AS (
     SELECT
-        area,
+        tank_id,
+        tank_size,
         COUNT(*) AS total_batches,
-        SUM(number_of_adjustments) AS total_adjustments,
-        SUM(CASE WHEN number_of_adjustments > 0 THEN 1 ELSE 0 END) AS adjusted_batches,
-        AVG(number_of_adjustments) AS avg_adjustments_per_batch
+        SUM(number_of_adjustments) AS total_adjustments
     FROM manufacturing.blend_analysis_analysis_v
-    GROUP BY area
+	WHERE tank_id <> '13'
+    GROUP BY tank_id, tank_size
+),
+ranked_tank_size AS (
+    SELECT
+        tank_id,
+        tank_size,
+        total_batches,
+        total_adjustments,
+        ROUND(
+            (100.0 * total_adjustments / NULLIF(SUM(total_adjustments) OVER (), 0))::numeric,
+            2
+        ) AS adjustment_share_pct,
+        ROUND(
+            (
+                100.0 * SUM(total_adjustments) OVER (
+                    ORDER BY total_adjustments DESC, tank_id, tank_size
+                    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+                ) / NULLIF(SUM(total_adjustments) OVER (), 0)
+            )::numeric,
+            2
+        ) AS cumulative_adjustment_share_pct,
+        RANK() OVER (
+            ORDER BY total_adjustments DESC
+        ) AS adjustment_rank
+    FROM tank_size_summary
 )
 SELECT
-    area,
+    tank_id,
+    tank_size,
     total_batches,
     total_adjustments,
-    adjusted_batches,
-    ROUND((100.0 * adjusted_batches / NULLIF(total_batches, 0))::numeric, 2) AS adjusted_batch_rate_pct,
-    ROUND(avg_adjustments_per_batch::numeric, 2) AS avg_adjustments_per_batch,
-    RANK() OVER (ORDER BY total_adjustments DESC) AS total_adjustment_rank,
-    RANK() OVER (
-        ORDER BY (100.0 * adjusted_batches / NULLIF(total_batches, 0)) DESC
-    ) AS adjusted_batch_rate_rank
-FROM area_summary
-ORDER BY total_adjustment_rank, area;
+    adjustment_share_pct,
+    cumulative_adjustment_share_pct,
+    adjustment_rank
+FROM ranked_tank_size
+WHERE adjustment_rank <= 5
+ORDER BY adjustment_rank, tank_id, tank_size;
+
