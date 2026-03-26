@@ -57,16 +57,21 @@ SET Tank_ID = CASE
 	WHEN Tank_ID IN ('8A','8B','8L','8R') THEN '8'
 	WHEN Tank_ID IN ('D','DRUM') THEN 'DRUM'
 	WHEN Tank_ID IN ('GAL','GALLON') THEN 'GALLON'
-	WHEN Tank_ID IN ('tote') THEN 'TOTE'
+	WHEN Tank_ID IN ('TOTE') THEN 'TOTE'
 	WHEN Tank_ID IN ('`1', '1`') THEN '1'
 	WHEN Tank_ID IN ('11 #^') THEN '11'
 	WHEN Tank_ID IN ('4T') THEN '4'
 	WHEN Tank_ID IN ('110','330','55','660','ETHEL','#?  #?') THEN NULL
 	WHEN Tank_ID IN ('PAIL','JUG') THEN 'GALLON'
-	WHEN Tank_ID IN ('9') and Status = 'Skirt' THEN NULL
+	WHEN Tank_ID IN ('9') and Area = 'Skirt' THEN NULL
 	WHEN Area = 'Powders' THEN NULL
 	ELSE Tank_ID
 END;
+
+--Validate Tank_ID Clean--
+SELECT DISTINCT Tank_ID
+FROM manufacturing.blend_analysis_clean
+ORDER BY Tank_ID;
 
 --Clean Area. Moving tank_ids into correct area based on # of blends--
 UPDATE manufacturing.blend_analysis_clean
@@ -74,7 +79,7 @@ SET Area = CASE
 	WHEN Tank_id IN ('1','2','3','4','5','6') THEN 'Mezzanine'
 	WHEN Tank_id IN ('7','8') THEN 'Skirt'
 	WHEN Tank_id IN ('9','10') THEN 'Acid/Corrosive'
-	WHEN Tank_id IN ('11','12','13') THEN 'Polish'
+	WHEN Tank_id IN ('11','12','13') THEN 'Polishes'
 	ELSE Area
 END;
 

@@ -1,106 +1,137 @@
-# QC Blend Adjustment Monitoring with Excel
+# Manufacturing Blend Adjustment Analysis
 
 ## Project Overview
-This project analyzes QC blend adjustment activity in a manufacturing environment using Excel for data consolidation, validation, KPI reporting, and presentation-ready summary outputs.
+This project analyzes QC blend adjustment activity in a manufacturing environment to identify where adjustment burden is concentrated and where process instability may be driving repeated operational intervention. The analysis focuses on product groups, tanks, tank-size contexts, areas, and time-based trends to determine which parts of the process contribute most to recurring adjustments.
+
+This project was built as the flagship portfolio piece because it most closely reflects real analyst work in a manufacturing and quality setting. Excel was used for source validation, dashboarding, and stakeholder reporting, while SQL was used to clean the imported data, create an analysis layer, and generate ranked, rolling-average, and Pareto-style outputs.
 
 ## Dataset Summary
-The workbook contains historical QC batch records across multiple source tabs. Key fields include:
-
-- batch number
-- SAP part number
+The dataset contains one row per blend record and includes fields related to:
 - product name
-- product group
-- tank size
-- tank number
-- area
+- batch and blend identifiers
+- SAP part number
+- tank size and tank ID
+- production area
 - status
-- additions
-- date
+- additions information
+- production date and year
+- number of adjustments
+- product group
 
-These fields support both operational and performance-oriented analysis, including adjustment frequency, affected blend volume, group-level comparison, and time-based trend analysis.
+The project uses three related source artifacts:
+- `data/QC Data.xlsx` — raw source workbook
+- `QC Blend Adjustment Monitoring.xlsx` — Excel dashboard and reporting workbook
+- `QC Blend Adjustment Monitoring.csv` — CSV export used for SQL import
 
 ## Data Grain
 The dataset is structured at the following grain:
 
-one row per batch record
+**one row per blend record**
 
-This grain was important to validate early, as duplicate batch identifiers, missing fields, and inconsistent manual entry needed to be distinguished from expected operational structure.
+This allows the project to measure adjustment burden across multiple analytical cuts, including:
+- product group
+- tank ID
+- tank-size context
+- area
+- production date
 
 ## Tools Used
 - Microsoft Excel
+- PostgreSQL
+- Tableau
 - PivotTables
 - Excel formulas
 - GitHub
 
 ## Workflow
 
-### Data Consolidation
-Year-specific source data was consolidated into a single master table for analysis.
+### Source Validation and Dashboarding in Excel
+The source workbook was reviewed and validated in Excel before SQL analysis. Excel was also used to structure the dashboard, KPI outputs, and stakeholder-facing summary materials.
 
-This included:
-- combining inherited source records into QC Master Data
-- standardizing product name and product group fields through lookup logic
-- organizing the workbook into source, lookup, QA, and KPI layers
+### SQL Cleaning and Validation
+SQL was used to:
+- create a raw import table from the CSV export
+- create a cleaned table for analysis
+- remove rows with missing required values
+- standardize tank identifiers
+- normalize status values
+- validate cleaned outputs using targeted review queries
 
-### Validation
-Before analysis, the master table was checked for structural and logical consistency.
+### SQL Analysis Layer
+A dedicated analysis view was created to remove unused helper columns and provide a cleaner base for downstream queries.
 
-Validation checks included:
-- missing SAP part number
-- missing date
-- missing product name
-- missing product group
-- duplicate batch number
-- invalid tank size
-- missing area
-- missing tank number
-- incomplete status conditions
-- dates outside expected range
+### Analytical Queries
+SQL was used to generate:
+- product group rankings
+- tank rankings
+- area rankings
+- daily and monthly trend summaries
+- rolling averages
+- prior-period comparisons using `LAG()`
+- Pareto / share-of-total analysis
+- top tank / tank-size priority tables
 
-These checks were surfaced through a dedicated QA Checks tab rather than treated as background issues.
+### Presentation Layer
+The final findings were presented through:
+- the Excel dashboard workbook
+- a stakeholder-facing written summary
+- supporting SQL outputs used to guide final recommendations
 
-### Analytical Preparation
-Helper columns were added to support repeatable summary logic and KPI reporting.
+## Key Findings
+- Adjustment burden is highly concentrated by product group, with **Soaps & Detergents** and **Dressings** accounting for the majority of all recorded adjustments.
+- The highest total adjustment burden and the highest adjustment-rate burden do not always point to the same tanks, indicating that some tanks create more total work while others are less reliable proportionally.
+- A small number of tank / tank-size combinations account for a disproportionate share of total adjustments, showing that burden is concentrated in a limited set of operating contexts.
+- The **Mezzanine** stands out as the strongest area-level hotspot, while the **Skirt** warrants review because of its limited size capacity combined with elevated adjustment burden.
+- Rolling trend analysis shows that adjustment activity remains variable over time rather than demonstrating clear sustained improvement.
 
-This included:
-- year extraction
-- adjusted batch flag
-- adjustment count logic
-- duplicate batch count logic
-- rolling date-window helper fields
-- record count support for summary reporting
-
-### KPI and Summary Development
-The final workbook was structured to support a presentation-facing KPI tab.
-
-Outputs included:
-- top-line KPI summary
-- group-level adjustment summary
-- yearly summary
-- chart comparing blend volume and adjustment rate over time
-- chart comparing blend volume and adjustment rate by product group
+## Recommendations
+- **High-burden product groups:** Review **Soaps & Detergents** and **Dressings** for recurring formulation or process issues, as these groups account for the largest share of total adjustment burden.
+- **Tank 1:** Use Tank 1 for non-solvent blends only when operationally necessary. Where possible, reserve it for solvent-based production or safer-fit categories such as cleaners and degreasers.
+- **Skirt Area:** Evaluate whether the Skirt area remains operationally necessary. Its limited maximum blend size, combined with elevated adjustment burden, may make it a comparatively inefficient use of manufacturing and lab resources.
+- **Performance monitoring:** Use the 30-day rolling trend as an ongoing KPI to track whether adjustment burden is improving after operational changes are made.
 
 ## Excel Techniques Used
-- XLOOKUP for product enrichment and group mapping
-- helper-column logic for analytical flags and counts
-- COUNTIF / COUNTIFS for validation and grouped metrics
-- SUMIFS / SUMPRODUCT for KPI calculations
-- PivotTables for grouped aggregation
-- charting for time-based and category-based comparison
-- structured table references for formula consistency
+- workbook-based QA checks
+- helper-column validation
+- data standardization checks
+- pivot tables
+- ranked summary tables
+- dashboard layout and KPI presentation
+- stakeholder-facing summary development
+
+## SQL Techniques Used
+- raw table creation for CSV import
+- cleaned analysis table creation
+- row-removal logic for invalid records
+- value standardization using `UPDATE` and `CASE`
+- creation of a reusable analysis view
+- layered CTEs for structured queries
+- conditional aggregation
+- ranking with window functions
+- rolling averages with window functions
+- prior-period comparison using `LAG()`
+- Pareto / share-of-total analysis
 
 ## Technical Outputs
-This project produced the following technical outputs:
-
-- source-year QC data tabs
-- lookup and enrichment tables
-- consolidated master data table
-- QA validation tab
-- KPI summary tab
-- grouped summary tables
-- Excel charts comparing adjustment burden by month and by product group
+This project produced the following technical artifacts:
+- Excel workbook dashboard
+- stakeholder-facing written summary
+- SQL cleaning and validation script
+- SQL analysis queries for rankings, trends, and Pareto analysis
 
 ## Limitations
-The retained workbook snapshot includes data through August 2021, which reflects the latest available version used for this project. The workbook structure was designed as a repeatable monitoring tool rather than a one-time static report.
+- Rankings identify where burden is concentrated, but do not by themselves determine root cause.
+- Tank, area, and product-group performance should still be interpreted alongside operational context and production mix.
+- Further review is needed to determine whether burden is driven primarily by equipment, formulation, scheduling, or other process factors.
 
-Because the data originated from real operational records, some fields contain manual-entry issues, incomplete values, and duplicate identifiers. These limitations were explicitly measured through the QA layer and considered during interpretation.
+## Repository Structure
+- `01_create_raw_table.sql` — raw SQL import table creation
+- `02_clean_validation.sql` — cleaning logic and validation checks
+- `03_analysis.sql` — rankings, trends, rolling averages, and Pareto analysis
+- `QC Blend Adjustment Monitoring.xlsx` — Excel dashboard workbook
+- `Manufacturing_Presentation_Summary.docx` — stakeholder-facing written summary
+- `data/QC Data.xlsx` — raw source workbook
+- `QC Blend Adjustment Monitoring.csv` — CSV export used for SQL import
+
+## Conclusion
+This project shows how Excel and SQL can be used together to identify where manufacturing adjustment burden is concentrated and where targeted operational review is most likely to be useful. The final analysis highlights a small number of product groups, tanks, and operating contexts that account for a disproportionate share of total adjustments, making the project both analytically strong and operationally relevant.

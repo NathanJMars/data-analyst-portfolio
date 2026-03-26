@@ -1,0 +1,2942 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <PatternedLineMarks />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Ranked Tank Analysis- Overall' inline='true' name='federated.0lydw730634yvk15768620yvrm8d' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Ranked Tank Analysis- Overall' name='textscan.0ke9d4318hzofh11vf4vk1sg2wzb'>
+            <connection class='textscan' directory='C:/Users/natem/Desktop/data-analyst-portfolio/Manufacturing Analysis/tables' filename='Ranked Tank Analysis- Overall.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0ke9d4318hzofh11vf4vk1sg2wzb' name='Ranked Tank Analysis- Overall.csv' table='[Ranked Tank Analysis- Overall#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='tank_id' ordinal='0' />
+            <column datatype='string' name='area' ordinal='1' />
+            <column datatype='integer' name='total_batches' ordinal='2' />
+            <column datatype='integer' name='total_adjustments' ordinal='3' />
+            <column datatype='integer' name='adjusted_batches' ordinal='4' />
+            <column datatype='real' name='adjusted_batch_rate_pct' ordinal='5' />
+            <column datatype='real' name='avg_adjustments_per_batch' ordinal='6' />
+            <column datatype='integer' name='total_adjustment_rank' ordinal='7' />
+            <column datatype='integer' name='adjusted_batch_rate_rank' ordinal='8' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tank_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tank_id]</local-name>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias>tank_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>area</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[area]</local-name>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias>area</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_batches</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_batches]</local-name>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias>total_batches</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_adjustments</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_adjustments]</local-name>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias>total_adjustments</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjusted_batches</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[adjusted_batches]</local-name>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias>adjusted_batches</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjusted_batch_rate_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[adjusted_batch_rate_pct]</local-name>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias>adjusted_batch_rate_pct</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_adjustments_per_batch</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_adjustments_per_batch]</local-name>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias>avg_adjustments_per_batch</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_adjustment_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_adjustment_rank]</local-name>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias>total_adjustment_rank</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjusted_batch_rate_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[adjusted_batch_rate_rank]</local-name>
+            <parent-name>[Ranked Tank Analysis- Overall.csv]</parent-name>
+            <remote-alias>adjusted_batch_rate_rank</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Ranked Tank Analysis- Overall.csv' datatype='table' name='[__tableau_internal_object_id__].[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]' role='measure' type='quantitative' />
+      <column caption='Adjusted Batch Rate Pct' datatype='real' name='[adjusted_batch_rate_pct]' role='measure' type='quantitative' />
+      <column caption='Adjusted Batch Rate Rank' datatype='integer' name='[adjusted_batch_rate_rank]' role='measure' type='quantitative' />
+      <column caption='Adjusted Batches' datatype='integer' name='[adjusted_batches]' role='measure' type='quantitative' />
+      <column caption='Area' datatype='string' name='[area]' role='dimension' type='nominal' />
+      <column caption='Avg Adjustments Per Batch' datatype='real' name='[avg_adjustments_per_batch]' role='measure' type='quantitative' />
+      <column caption='Tank Id' datatype='string' name='[tank_id]' role='dimension' type='nominal' />
+      <column caption='Total Adjustment Rank' datatype='integer' name='[total_adjustment_rank]' role='measure' type='quantitative' />
+      <column caption='Total Adjustments' datatype='integer' name='[total_adjustments]' role='measure' type='quantitative' />
+      <column caption='Total Batches' datatype='integer' name='[total_batches]' role='measure' type='quantitative' />
+      <column-instance column='[area]' derivation='None' name='[none:area:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/natem/AppData/Local/Temp/TableauTemp/#TableauTemp_08fdh4h060g3rn0zw3vjg1k13v4p.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/26/2026 09:30:21 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>tank_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[tank_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tank_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Ranked Tank Analysis- Overall.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>area</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[area]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>area</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Ranked Tank Analysis- Overall.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_batches</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_batches]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_batches</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Ranked Tank Analysis- Overall.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_adjustments</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_adjustments]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_adjustments</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Ranked Tank Analysis- Overall.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjusted_batches</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[adjusted_batches]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjusted_batches</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Ranked Tank Analysis- Overall.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjusted_batch_rate_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[adjusted_batch_rate_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjusted_batch_rate_pct</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Ranked Tank Analysis- Overall.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>avg_adjustments_per_batch</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[avg_adjustments_per_batch]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>avg_adjustments_per_batch</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Ranked Tank Analysis- Overall.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_adjustment_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_adjustment_rank]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_adjustment_rank</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Ranked Tank Analysis- Overall.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjusted_batch_rate_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[adjusted_batch_rate_rank]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjusted_batch_rate_rank</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Ranked Tank Analysis- Overall.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:area:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Acid/Corrosive&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Mezzanine&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Polish&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Lab&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Polishes&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Skirt&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Coatings&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Ranked Tank Analysis- Overall.csv' id='Ranked Tank Analysis- Overall.csv_6038FB432F5F452189A78E105BE48A20'>
+            <properties context=''>
+              <relation connection='textscan.0ke9d4318hzofh11vf4vk1sg2wzb' name='Ranked Tank Analysis- Overall.csv' table='[Ranked Tank Analysis- Overall#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='tank_id' ordinal='0' />
+                  <column datatype='string' name='area' ordinal='1' />
+                  <column datatype='integer' name='total_batches' ordinal='2' />
+                  <column datatype='integer' name='total_adjustments' ordinal='3' />
+                  <column datatype='integer' name='adjusted_batches' ordinal='4' />
+                  <column datatype='real' name='adjusted_batch_rate_pct' ordinal='5' />
+                  <column datatype='real' name='avg_adjustments_per_batch' ordinal='6' />
+                  <column datatype='integer' name='total_adjustment_rank' ordinal='7' />
+                  <column datatype='integer' name='adjusted_batch_rate_rank' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Operational 30d Rolling Average' inline='true' name='federated.0wdhq1b0wgdocg1h0wu6e15o68wv' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Operational 30d Rolling Average' name='textscan.0lh2v9e0w223z91970bmr1t6a5it'>
+            <connection class='textscan' directory='C:/Users/natem/Desktop/data-analyst-portfolio/Manufacturing Analysis/tables' filename='Operational 30d Rolling Average.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0lh2v9e0w223z91970bmr1t6a5it' name='Operational 30d Rolling Average.csv' table='[Operational 30d Rolling Average#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='production_date' ordinal='0' />
+            <column datatype='integer' name='total_batches' ordinal='1' />
+            <column datatype='real' name='total_tank_size' ordinal='2' />
+            <column datatype='integer' name='total_adjustments' ordinal='3' />
+            <column datatype='integer' name='adjusted_batches' ordinal='4' />
+            <column datatype='real' name='adjusted_batch_rate_pct' ordinal='5' />
+            <column datatype='real' name='rolling_30_day_avg_tank_size' ordinal='6' />
+            <column datatype='real' name='rolling_30_day_avg_adjustments' ordinal='7' />
+            <column datatype='real' name='rolling_30_day_avg_adjusted_rate_pct' ordinal='8' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>production_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[production_date]</local-name>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias>production_date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_batches</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_batches]</local-name>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias>total_batches</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_tank_size</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_tank_size]</local-name>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias>total_tank_size</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_adjustments</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_adjustments]</local-name>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias>total_adjustments</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjusted_batches</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[adjusted_batches]</local-name>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias>adjusted_batches</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjusted_batch_rate_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[adjusted_batch_rate_pct]</local-name>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias>adjusted_batch_rate_pct</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rolling_30_day_avg_tank_size</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[rolling_30_day_avg_tank_size]</local-name>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias>rolling_30_day_avg_tank_size</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rolling_30_day_avg_adjustments</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[rolling_30_day_avg_adjustments]</local-name>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias>rolling_30_day_avg_adjustments</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rolling_30_day_avg_adjusted_rate_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[rolling_30_day_avg_adjusted_rate_pct]</local-name>
+            <parent-name>[Operational 30d Rolling Average.csv]</parent-name>
+            <remote-alias>rolling_30_day_avg_adjusted_rate_pct</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]&quot;' value='Rolling Avg Adjusted Batch Rate (%)' />
+          <alias key='&quot;[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]&quot;' value='Rolling Avg Total Adjustments' />
+        </aliases>
+      </column>
+      <column caption='Operational 30d Rolling Average.csv' datatype='table' name='[__tableau_internal_object_id__].[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]' role='measure' type='quantitative' />
+      <column caption='Adjusted Batch Rate Pct' datatype='real' name='[adjusted_batch_rate_pct]' role='measure' type='quantitative' />
+      <column caption='Adjusted Batches' datatype='integer' name='[adjusted_batches]' role='measure' type='quantitative' />
+      <column caption='Production Date' datatype='date' name='[production_date]' role='dimension' type='ordinal' />
+      <column caption='Rolling 30 Day Avg Adjusted Rate Pct' datatype='real' name='[rolling_30_day_avg_adjusted_rate_pct]' role='measure' type='quantitative' />
+      <column caption='Rolling 30 Day Avg Adjustments' datatype='real' name='[rolling_30_day_avg_adjustments]' role='measure' type='quantitative' />
+      <column caption='Rolling 30 Day Avg Tank Size' datatype='real' name='[rolling_30_day_avg_tank_size]' role='measure' type='quantitative' />
+      <column caption='Total Adjustments' datatype='integer' name='[total_adjustments]' role='measure' type='quantitative' />
+      <column caption='Total Batches' datatype='integer' name='[total_batches]' role='measure' type='quantitative' />
+      <column caption='Total Tank Size' datatype='real' name='[total_tank_size]' role='measure' type='quantitative' />
+      <column-instance column='[rolling_30_day_avg_adjusted_rate_pct]' derivation='Attribute' name='[attr:rolling_30_day_avg_adjusted_rate_pct:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[rolling_30_day_avg_adjusted_rate_pct]' derivation='Avg' name='[avg:rolling_30_day_avg_adjusted_rate_pct:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[rolling_30_day_avg_adjusted_rate_pct]' derivation='None' name='[none:rolling_30_day_avg_adjusted_rate_pct:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[rolling_30_day_avg_adjusted_rate_pct]' derivation='Sum' name='[sum:rolling_30_day_avg_adjusted_rate_pct:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[rolling_30_day_avg_adjustments]' derivation='Sum' name='[sum:rolling_30_day_avg_adjustments:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/natem/AppData/Local/Temp/TableauTemp/#TableauTemp_05dbik817b2jt216edg6x1ct3gnb.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/26/2026 09:49:30 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>production_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[production_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>production_date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Operational 30d Rolling Average.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>580</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_batches</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_batches]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_batches</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Operational 30d Rolling Average.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>40</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_tank_size</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_tank_size]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_tank_size</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Operational 30d Rolling Average.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>511</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_adjustments</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_adjustments]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_adjustments</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Operational 30d Rolling Average.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjusted_batches</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[adjusted_batches]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjusted_batches</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Operational 30d Rolling Average.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjusted_batch_rate_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[adjusted_batch_rate_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjusted_batch_rate_pct</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Operational 30d Rolling Average.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>125</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rolling_30_day_avg_tank_size</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[rolling_30_day_avg_tank_size]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rolling_30_day_avg_tank_size</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Operational 30d Rolling Average.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>577</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rolling_30_day_avg_adjustments</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[rolling_30_day_avg_adjustments]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rolling_30_day_avg_adjustments</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Operational 30d Rolling Average.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>107</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rolling_30_day_avg_adjusted_rate_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[rolling_30_day_avg_adjusted_rate_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rolling_30_day_avg_adjusted_rate_pct</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Operational 30d Rolling Average.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>398</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0wdhq1b0wgdocg1h0wu6e15o68wv]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[attr:rolling_30_day_avg_adjusted_rate_pct:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[none:rolling_30_day_avg_adjusted_rate_pct:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjusted_rate_pct:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Operational 30d Rolling Average.csv' id='Operational 30d Rolling Average.csv_215B0F055110444482984103DA5A6E3A'>
+            <properties context=''>
+              <relation connection='textscan.0lh2v9e0w223z91970bmr1t6a5it' name='Operational 30d Rolling Average.csv' table='[Operational 30d Rolling Average#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='production_date' ordinal='0' />
+                  <column datatype='integer' name='total_batches' ordinal='1' />
+                  <column datatype='real' name='total_tank_size' ordinal='2' />
+                  <column datatype='integer' name='total_adjustments' ordinal='3' />
+                  <column datatype='integer' name='adjusted_batches' ordinal='4' />
+                  <column datatype='real' name='adjusted_batch_rate_pct' ordinal='5' />
+                  <column datatype='real' name='rolling_30_day_avg_tank_size' ordinal='6' />
+                  <column datatype='real' name='rolling_30_day_avg_adjustments' ordinal='7' />
+                  <column datatype='real' name='rolling_30_day_avg_adjusted_rate_pct' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Ranked Area Analysis' inline='true' name='federated.07bbszx0ck9ucs1c5jasq07s5y2c' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Ranked Area Analysis' name='textscan.1z0anph0vckwf11eradkx1hip8dz'>
+            <connection class='textscan' directory='C:/Users/natem/Desktop/data-analyst-portfolio/Manufacturing Analysis/tables' filename='Ranked Area Analysis.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1z0anph0vckwf11eradkx1hip8dz' name='Ranked Area Analysis.csv' table='[Ranked Area Analysis#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='area' ordinal='0' />
+            <column datatype='integer' name='total_batches' ordinal='1' />
+            <column datatype='integer' name='total_adjustments' ordinal='2' />
+            <column datatype='integer' name='adjusted_batches' ordinal='3' />
+            <column datatype='real' name='adjusted_batch_rate_pct' ordinal='4' />
+            <column datatype='real' name='avg_adjustments_per_batch' ordinal='5' />
+            <column datatype='integer' name='total_adjustment_rank' ordinal='6' />
+            <column datatype='integer' name='adjusted_batch_rate_rank' ordinal='7' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Ranked Area Analysis.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>area</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[area]</local-name>
+            <parent-name>[Ranked Area Analysis.csv]</parent-name>
+            <remote-alias>area</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_batches</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_batches]</local-name>
+            <parent-name>[Ranked Area Analysis.csv]</parent-name>
+            <remote-alias>total_batches</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_adjustments</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_adjustments]</local-name>
+            <parent-name>[Ranked Area Analysis.csv]</parent-name>
+            <remote-alias>total_adjustments</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjusted_batches</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[adjusted_batches]</local-name>
+            <parent-name>[Ranked Area Analysis.csv]</parent-name>
+            <remote-alias>adjusted_batches</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjusted_batch_rate_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[adjusted_batch_rate_pct]</local-name>
+            <parent-name>[Ranked Area Analysis.csv]</parent-name>
+            <remote-alias>adjusted_batch_rate_pct</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_adjustments_per_batch</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_adjustments_per_batch]</local-name>
+            <parent-name>[Ranked Area Analysis.csv]</parent-name>
+            <remote-alias>avg_adjustments_per_batch</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_adjustment_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_adjustment_rank]</local-name>
+            <parent-name>[Ranked Area Analysis.csv]</parent-name>
+            <remote-alias>total_adjustment_rank</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjusted_batch_rate_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[adjusted_batch_rate_rank]</local-name>
+            <parent-name>[Ranked Area Analysis.csv]</parent-name>
+            <remote-alias>adjusted_batch_rate_rank</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Ranked Area Analysis.csv' datatype='table' name='[__tableau_internal_object_id__].[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]' role='measure' type='quantitative' />
+      <column caption='Adjusted Batch Rate Pct' datatype='real' name='[adjusted_batch_rate_pct]' role='measure' type='quantitative' />
+      <column caption='Adjusted Batch Rate Rank' datatype='integer' name='[adjusted_batch_rate_rank]' role='measure' type='quantitative' />
+      <column caption='Adjusted Batches' datatype='integer' name='[adjusted_batches]' role='measure' type='quantitative' />
+      <column caption='Area' datatype='string' name='[area]' role='dimension' type='nominal' />
+      <column caption='Avg Adjustments Per Batch' datatype='real' name='[avg_adjustments_per_batch]' role='measure' type='quantitative' />
+      <column caption='Total Adjustment Rank' datatype='integer' name='[total_adjustment_rank]' role='measure' type='quantitative' />
+      <column caption='Total Adjustments' datatype='integer' name='[total_adjustments]' role='measure' type='quantitative' />
+      <column caption='Total Batches' datatype='integer' name='[total_batches]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/natem/AppData/Local/Temp/TableauTemp/#TableauTemp_11fggsz1a2dfr817vnquq05szpmt.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/26/2026 09:58:29 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>area</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[area]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>area</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Ranked Area Analysis.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_batches</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_batches]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_batches</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Ranked Area Analysis.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_adjustments</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_adjustments]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_adjustments</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Ranked Area Analysis.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjusted_batches</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[adjusted_batches]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjusted_batches</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Ranked Area Analysis.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjusted_batch_rate_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[adjusted_batch_rate_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjusted_batch_rate_pct</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Ranked Area Analysis.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>avg_adjustments_per_batch</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[avg_adjustments_per_batch]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>avg_adjustments_per_batch</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Ranked Area Analysis.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_adjustment_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_adjustment_rank]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_adjustment_rank</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Ranked Area Analysis.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjusted_batch_rate_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[adjusted_batch_rate_rank]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjusted_batch_rate_rank</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Ranked Area Analysis.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Ranked Area Analysis.csv' id='Ranked Area Analysis.csv_CC781C16117F4D66BCEF934531442DD8'>
+            <properties context=''>
+              <relation connection='textscan.1z0anph0vckwf11eradkx1hip8dz' name='Ranked Area Analysis.csv' table='[Ranked Area Analysis#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='area' ordinal='0' />
+                  <column datatype='integer' name='total_batches' ordinal='1' />
+                  <column datatype='integer' name='total_adjustments' ordinal='2' />
+                  <column datatype='integer' name='adjusted_batches' ordinal='3' />
+                  <column datatype='real' name='adjusted_batch_rate_pct' ordinal='4' />
+                  <column datatype='real' name='avg_adjustments_per_batch' ordinal='5' />
+                  <column datatype='integer' name='total_adjustment_rank' ordinal='6' />
+                  <column datatype='integer' name='adjusted_batch_rate_rank' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Pareto- Ranked Analysis by Group' inline='true' name='federated.1yk0qow0h1qe040zp3n2q0woosvw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Pareto- Ranked Analysis by Group' name='textscan.0uhguff196knec0zjsixb1t01g42'>
+            <connection class='textscan' directory='C:/Users/natem/Desktop/data-analyst-portfolio/Manufacturing Analysis/tables' filename='Pareto- Ranked Analysis by Group.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0uhguff196knec0zjsixb1t01g42' name='Pareto- Ranked Analysis by Group.csv' table='[Pareto- Ranked Analysis by Group#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='product_group' ordinal='0' />
+            <column datatype='integer' name='total_batches' ordinal='1' />
+            <column datatype='integer' name='total_adjustments' ordinal='2' />
+            <column datatype='real' name='adjustment_share_pct' ordinal='3' />
+            <column datatype='real' name='cumulative_adjustment_share_pct' ordinal='4' />
+            <column datatype='integer' name='adjustment_rank' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Pareto- Ranked Analysis by Group.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_group]</local-name>
+            <parent-name>[Pareto- Ranked Analysis by Group.csv]</parent-name>
+            <remote-alias>product_group</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_batches</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_batches]</local-name>
+            <parent-name>[Pareto- Ranked Analysis by Group.csv]</parent-name>
+            <remote-alias>total_batches</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_adjustments</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_adjustments]</local-name>
+            <parent-name>[Pareto- Ranked Analysis by Group.csv]</parent-name>
+            <remote-alias>total_adjustments</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjustment_share_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[adjustment_share_pct]</local-name>
+            <parent-name>[Pareto- Ranked Analysis by Group.csv]</parent-name>
+            <remote-alias>adjustment_share_pct</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cumulative_adjustment_share_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cumulative_adjustment_share_pct]</local-name>
+            <parent-name>[Pareto- Ranked Analysis by Group.csv]</parent-name>
+            <remote-alias>cumulative_adjustment_share_pct</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjustment_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[adjustment_rank]</local-name>
+            <parent-name>[Pareto- Ranked Analysis by Group.csv]</parent-name>
+            <remote-alias>adjustment_rank</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Pareto- Ranked Analysis by Group.csv' datatype='table' name='[__tableau_internal_object_id__].[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]' role='measure' type='quantitative' />
+      <column caption='Adjustment Rank' datatype='integer' name='[adjustment_rank]' role='measure' type='quantitative' />
+      <column caption='Adjustment Share Pct' datatype='real' name='[adjustment_share_pct]' role='measure' type='quantitative' />
+      <column aggregation='Count' caption='Cumulative Adjustment Share Pct' datatype='integer' datatype-customized='true' name='[cumulative_adjustment_share_pct]' role='measure' type='quantitative' />
+      <column caption='Product Group' datatype='string' name='[product_group]' role='dimension' type='nominal' />
+      <column caption='Total Adjustments' datatype='integer' name='[total_adjustments]' role='measure' type='quantitative' />
+      <column caption='Total Batches' datatype='integer' name='[total_batches]' role='measure' type='quantitative' />
+      <column-instance column='[adjustment_share_pct]' derivation='Sum' name='[sum:adjustment_share_pct:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[cumulative_adjustment_share_pct]' derivation='Sum' name='[sum:cumulative_adjustment_share_pct:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[total_adjustments]' derivation='Sum' name='[sum:total_adjustments:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/natem/AppData/Local/Temp/TableauTemp/#TableauTemp_0xfei2h0d0z0f7176sb741fbbt49.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/26/2026 09:23:06 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>product_group</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_group]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_group</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Pareto- Ranked Analysis by Group.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_batches</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_batches]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_batches</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Pareto- Ranked Analysis by Group.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_adjustments</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_adjustments]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_adjustments</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Pareto- Ranked Analysis by Group.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjustment_share_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[adjustment_share_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjustment_share_pct</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Pareto- Ranked Analysis by Group.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cumulative_adjustment_share_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[cumulative_adjustment_share_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cumulative_adjustment_share_pct</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Pareto- Ranked Analysis by Group.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjustment_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[adjustment_rank]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjustment_rank</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Pareto- Ranked Analysis by Group.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1yk0qow0h1qe040zp3n2q0woosvw].[sum:adjustment_share_pct:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.1yk0qow0h1qe040zp3n2q0woosvw]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1yk0qow0h1qe040zp3n2q0woosvw].[sum:cumulative_adjustment_share_pct:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1yk0qow0h1qe040zp3n2q0woosvw].[sum:total_adjustments:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Pareto- Ranked Analysis by Group.csv' id='Pareto- Ranked Analysis by Group.csv_6200EB3B8ADD4138A7CEF6D7C008159A'>
+            <properties context=''>
+              <relation connection='textscan.0uhguff196knec0zjsixb1t01g42' name='Pareto- Ranked Analysis by Group.csv' table='[Pareto- Ranked Analysis by Group#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='product_group' ordinal='0' />
+                  <column datatype='integer' name='total_batches' ordinal='1' />
+                  <column datatype='integer' name='total_adjustments' ordinal='2' />
+                  <column datatype='real' name='adjustment_share_pct' ordinal='3' />
+                  <column datatype='real' name='cumulative_adjustment_share_pct' ordinal='4' />
+                  <column datatype='integer' name='adjustment_rank' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Pareto- Top 5 adjustments by tank volume' inline='true' name='federated.1rarssu1pvughv0zkq6611kmk32p' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Pareto- Top 5 adjustments by tank volume' name='textscan.1ljeyp40q5srvu13hiwoj1uw1c9d'>
+            <connection class='textscan' directory='C:/Users/natem/Desktop/data-analyst-portfolio/Manufacturing Analysis/tables' filename='Pareto- Top 5 adjustments by tank volume.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1ljeyp40q5srvu13hiwoj1uw1c9d' name='Pareto- Top 5 adjustments by tank volume.csv' table='[Pareto- Top 5 adjustments by tank volume#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='tank_id' ordinal='0' />
+            <column datatype='integer' name='tank_size' ordinal='1' />
+            <column datatype='integer' name='total_batches' ordinal='2' />
+            <column datatype='integer' name='total_adjustments' ordinal='3' />
+            <column datatype='real' name='adjustment_share_pct' ordinal='4' />
+            <column datatype='real' name='cumulative_adjustment_share_pct' ordinal='5' />
+            <column datatype='integer' name='adjustment_rank' ordinal='6' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Pareto- Top 5 adjustments by tank volume.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tank_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tank_id]</local-name>
+            <parent-name>[Pareto- Top 5 adjustments by tank volume.csv]</parent-name>
+            <remote-alias>tank_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tank_size</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tank_size]</local-name>
+            <parent-name>[Pareto- Top 5 adjustments by tank volume.csv]</parent-name>
+            <remote-alias>tank_size</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_batches</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_batches]</local-name>
+            <parent-name>[Pareto- Top 5 adjustments by tank volume.csv]</parent-name>
+            <remote-alias>total_batches</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_adjustments</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_adjustments]</local-name>
+            <parent-name>[Pareto- Top 5 adjustments by tank volume.csv]</parent-name>
+            <remote-alias>total_adjustments</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjustment_share_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[adjustment_share_pct]</local-name>
+            <parent-name>[Pareto- Top 5 adjustments by tank volume.csv]</parent-name>
+            <remote-alias>adjustment_share_pct</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cumulative_adjustment_share_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cumulative_adjustment_share_pct]</local-name>
+            <parent-name>[Pareto- Top 5 adjustments by tank volume.csv]</parent-name>
+            <remote-alias>cumulative_adjustment_share_pct</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adjustment_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[adjustment_rank]</local-name>
+            <parent-name>[Pareto- Top 5 adjustments by tank volume.csv]</parent-name>
+            <remote-alias>adjustment_rank</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.1rarssu1pvughv0zkq6611kmk32p].[sum:adjustment_share_pct:qk]&quot;' value='Adjustment Share (%)' />
+          <alias key='&quot;[federated.1rarssu1pvughv0zkq6611kmk32p].[sum:cumulative_adjustment_share_pct:qk]&quot;' value='Cumulative Share (%)' />
+        </aliases>
+      </column>
+      <column caption='Pareto- Top 5 adjustments by tank volume.csv' datatype='table' name='[__tableau_internal_object_id__].[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]' role='measure' type='quantitative' />
+      <column caption='Adjustment Rank' datatype='integer' datatype-customized='true' default-format='N' name='[adjustment_rank]' role='measure' type='quantitative' />
+      <column caption='Adjustment Share Pct' datatype='real' name='[adjustment_share_pct]' role='measure' type='quantitative' />
+      <column caption='Cumulative Adjustment Share Pct' datatype='real' name='[cumulative_adjustment_share_pct]' role='measure' type='quantitative' />
+      <column caption='Tank Id' datatype='integer' name='[tank_id]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Tank Size' datatype='integer' name='[tank_size]' role='dimension' type='ordinal' />
+      <column caption='Total Adjustments' datatype='integer' default-format='N' name='[total_adjustments]' role='measure' type='quantitative' />
+      <column caption='Total Batches' datatype='integer' default-format='N' name='[total_batches]' role='measure' type='quantitative' />
+      <column-instance column='[adjustment_share_pct]' derivation='Sum' name='[sum:adjustment_share_pct:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[cumulative_adjustment_share_pct]' derivation='Sum' name='[sum:cumulative_adjustment_share_pct:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/natem/AppData/Local/Temp/TableauTemp/#TableauTemp_1j2wfxr0u47s8t1ff77d80u5tems.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/26/2026 09:55:05 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>tank_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[tank_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tank_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Pareto- Top 5 adjustments by tank volume.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tank_size</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[tank_size]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tank_size</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Pareto- Top 5 adjustments by tank volume.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_batches</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_batches]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_batches</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Pareto- Top 5 adjustments by tank volume.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_adjustments</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_adjustments]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_adjustments</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Pareto- Top 5 adjustments by tank volume.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjustment_share_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[adjustment_share_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjustment_share_pct</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Pareto- Top 5 adjustments by tank volume.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cumulative_adjustment_share_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[cumulative_adjustment_share_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cumulative_adjustment_share_pct</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Pareto- Top 5 adjustments by tank volume.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adjustment_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[adjustment_rank]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>adjustment_rank</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Pareto- Top 5 adjustments by tank volume.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Pareto- Top 5 adjustments by tank volume.csv' id='Pareto- Top 5 adjustments by tank volume.csv_15927464269841069A7447EF8117C38D'>
+            <properties context=''>
+              <relation connection='textscan.1ljeyp40q5srvu13hiwoj1uw1c9d' name='Pareto- Top 5 adjustments by tank volume.csv' table='[Pareto- Top 5 adjustments by tank volume#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='tank_id' ordinal='0' />
+                  <column datatype='integer' name='tank_size' ordinal='1' />
+                  <column datatype='integer' name='total_batches' ordinal='2' />
+                  <column datatype='integer' name='total_adjustments' ordinal='3' />
+                  <column datatype='real' name='adjustment_share_pct' ordinal='4' />
+                  <column datatype='real' name='cumulative_adjustment_share_pct' ordinal='5' />
+                  <column datatype='integer' name='adjustment_rank' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='30-Day Rolling Average of Adjustments and Adjusted Batch Rate'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Operational 30d Rolling Average' name='federated.0wdhq1b0wgdocg1h0wu6e15o68wv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wdhq1b0wgdocg1h0wu6e15o68wv'>
+            <column-instance column='[rolling_30_day_avg_adjusted_rate_pct]' derivation='Avg' name='[avg:rolling_30_day_avg_adjusted_rate_pct:qk]' pivot='key' type='quantitative' />
+            <column caption='Production Date' datatype='date' name='[production_date]' role='dimension' type='ordinal' />
+            <column caption='Rolling 30 Day Avg Adjusted Rate Pct' datatype='real' name='[rolling_30_day_avg_adjusted_rate_pct]' role='measure' type='quantitative' />
+            <column caption='Rolling 30 Day Avg Adjustments' datatype='real' name='[rolling_30_day_avg_adjustments]' role='measure' type='quantitative' />
+            <column-instance column='[rolling_30_day_avg_adjustments]' derivation='Sum' name='[sum:rolling_30_day_avg_adjustments:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[production_date]' derivation='Month-Trunc' name='[tmn:production_date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]' field-type='quantitative' max='150.0' min='20.0' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]' field-type='quantitative' max='20.0' min='5.0' range-type='fixed' scope='rows' type='space' />
+            <format attr='title' class='0' field='[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]' scope='cols' value='Production Month' />
+            <format attr='title' class='0' field='[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]' scope='rows' value='Adjusted Batch Rate (%)' />
+            <format attr='title' class='0' field='[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]' scope='rows' value='Total Adjustments' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f28e2b' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk] + [federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk])</rows>
+        <cols>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]</cols>
+        <mark-labels>
+          <mark-label id='4' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]</field>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]</field>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>18.91363636363636</value>
+                <value>108.73999999999998</value>
+                <value>#2019-08-01 00:00:00#</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='5' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]</field>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]</field>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>18.91363636363636</value>
+                <value>108.73999999999998</value>
+                <value>#2019-08-01 00:00:00#</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='6' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]</field>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]</field>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>8.9094444444444445</value>
+                <value>35.310000000000002</value>
+                <value>#2020-12-01 00:00:00#</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='7' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[avg:rolling_30_day_avg_adjusted_rate_pct:qk]</field>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[sum:rolling_30_day_avg_adjustments:qk]</field>
+                  <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[tmn:production_date:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>7.9633333333333329</value>
+                <value>56.449999999999996</value>
+                <value>#2020-06-01 00:00:00#</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+        </mark-labels>
+      </table>
+      <simple-id uuid='{DB939CAA-1C3C-4DEE-89D5-25BE4DCAFF1F}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Ranked Area Analysis' name='federated.07bbszx0ck9ucs1c5jasq07s5y2c' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07bbszx0ck9ucs1c5jasq07s5y2c'>
+            <column caption='Area' datatype='string' name='[area]' role='dimension' type='nominal' />
+            <column-instance column='[area]' derivation='None' name='[none:area:nk]' pivot='key' type='nominal' />
+            <column-instance column='[total_adjustments]' derivation='Sum' name='[sum:total_adjustments:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Adjustments' datatype='integer' name='[total_adjustments]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07bbszx0ck9ucs1c5jasq07s5y2c].[none:area:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:area:nk]' member='&quot;Acid/Corrosive&quot;' />
+              <groupfilter function='member' level='[none:area:nk]' member='&quot;Coatings&quot;' />
+              <groupfilter function='member' level='[none:area:nk]' member='&quot;Mezzanine&quot;' />
+              <groupfilter function='member' level='[none:area:nk]' member='&quot;Polish&quot;' />
+              <groupfilter function='member' level='[none:area:nk]' member='&quot;Skirt&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.07bbszx0ck9ucs1c5jasq07s5y2c].[none:area:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.07bbszx0ck9ucs1c5jasq07s5y2c].[none:area:nk]</rows>
+        <cols>[federated.07bbszx0ck9ucs1c5jasq07s5y2c].[sum:total_adjustments:qk]</cols>
+      </table>
+      <simple-id uuid='{6818A145-5A0B-4F1C-81ED-FD003DCBCF26}' />
+    </worksheet>
+    <worksheet name='Top 5 Tank-Size Combinations by Total Adjustments'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Pareto- Top 5 adjustments by tank volume' name='federated.1rarssu1pvughv0zkq6611kmk32p' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1rarssu1pvughv0zkq6611kmk32p'>
+            <column caption='Adjustment Rank' datatype='integer' datatype-customized='true' default-format='N' name='[adjustment_rank]' role='measure' type='quantitative' />
+            <column caption='Adjustment Share Pct' datatype='real' name='[adjustment_share_pct]' role='measure' type='quantitative' />
+            <column caption='Cumulative Adjustment Share Pct' datatype='real' name='[cumulative_adjustment_share_pct]' role='measure' type='quantitative' />
+            <column-instance column='[tank_id]' derivation='None' name='[none:tank_id:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[tank_size]' derivation='None' name='[none:tank_size:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[adjustment_rank]' derivation='Sum' name='[sum:adjustment_rank:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[adjustment_share_pct]' derivation='Sum' name='[sum:adjustment_share_pct:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[cumulative_adjustment_share_pct]' derivation='Sum' name='[sum:cumulative_adjustment_share_pct:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_adjustments]' derivation='Sum' name='[sum:total_adjustments:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_batches]' derivation='Sum' name='[sum:total_batches:qk]' pivot='key' type='quantitative' />
+            <column caption='Tank Id' datatype='integer' name='[tank_id]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Tank Size' datatype='integer' name='[tank_size]' role='dimension' type='ordinal' />
+            <column caption='Total Adjustments' datatype='integer' default-format='N' name='[total_adjustments]' role='measure' type='quantitative' />
+            <column caption='Total Batches' datatype='integer' default-format='N' name='[total_batches]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1rarssu1pvughv0zkq6611kmk32p].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1rarssu1pvughv0zkq6611kmk32p].[sum:adjustment_rank:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1rarssu1pvughv0zkq6611kmk32p].[sum:adjustment_share_pct:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1rarssu1pvughv0zkq6611kmk32p].[sum:cumulative_adjustment_share_pct:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1rarssu1pvughv0zkq6611kmk32p].[sum:total_adjustments:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1rarssu1pvughv0zkq6611kmk32p].[sum:total_batches:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1rarssu1pvughv0zkq6611kmk32p].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1rarssu1pvughv0zkq6611kmk32p].[:Measure Names]' value='93' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1rarssu1pvughv0zkq6611kmk32p].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1rarssu1pvughv0zkq6611kmk32p].[none:tank_id:ok] / [federated.1rarssu1pvughv0zkq6611kmk32p].[none:tank_size:ok])</rows>
+        <cols>[federated.1rarssu1pvughv0zkq6611kmk32p].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{2F059A5A-1E75-4463-B311-D2A35C23EA9C}' />
+    </worksheet>
+    <worksheet name='Top Tanks by Total Adjustment Burden'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Ranked Tank Analysis- Overall' name='federated.0lydw730634yvk15768620yvrm8d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0lydw730634yvk15768620yvrm8d'>
+            <column caption='Area' datatype='string' name='[area]' role='dimension' type='nominal' />
+            <column-instance column='[area]' derivation='None' name='[none:area:nk]' pivot='key' type='nominal' />
+            <column-instance column='[tank_id]' derivation='None' name='[none:tank_id:nk]' pivot='key' type='nominal' />
+            <column-instance column='[total_adjustments]' derivation='Sum' name='[sum:total_adjustments:qk]' pivot='key' type='quantitative' />
+            <column caption='Tank Id' datatype='string' name='[tank_id]' role='dimension' type='nominal' />
+            <column caption='Total Adjustments' datatype='integer' name='[total_adjustments]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0lydw730634yvk15768620yvrm8d].[none:tank_id:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([total_adjustments])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:tank_id:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.0lydw730634yvk15768620yvrm8d].[none:tank_id:nk]' direction='DESC' using='[federated.0lydw730634yvk15768620yvrm8d].[sum:total_adjustments:qk]' />
+          <slices>
+            <column>[federated.0lydw730634yvk15768620yvrm8d].[none:tank_id:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0lydw730634yvk15768620yvrm8d].[none:area:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='line-interpolation' value='linear' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0lydw730634yvk15768620yvrm8d].[sum:total_adjustments:qk]</rows>
+        <cols>[federated.0lydw730634yvk15768620yvrm8d].[none:tank_id:nk]</cols>
+      </table>
+      <simple-id uuid='{5CAB34FC-EC64-4850-BDC5-1913FD8AB8BE}' />
+    </worksheet>
+    <worksheet name='Total Adjustments and Adjustment Share %'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Pareto- Ranked Analysis by Group' name='federated.1yk0qow0h1qe040zp3n2q0woosvw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1yk0qow0h1qe040zp3n2q0woosvw'>
+            <column aggregation='Count' caption='Cumulative Adjustment Share Pct' datatype='integer' datatype-customized='true' name='[cumulative_adjustment_share_pct]' role='measure' type='quantitative' />
+            <column-instance column='[cumulative_adjustment_share_pct]' derivation='None' name='[none:cumulative_adjustment_share_pct:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[product_group]' derivation='None' name='[none:product_group:nk]' pivot='key' type='nominal' />
+            <column caption='Product Group' datatype='string' name='[product_group]' role='dimension' type='nominal' />
+            <column-instance column='[total_adjustments]' derivation='Sum' name='[sum:total_adjustments:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Adjustments' datatype='integer' name='[total_adjustments]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[none:product_group:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[sum:total_adjustments:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[none:cumulative_adjustment_share_pct:qk]' field-type='quantitative' fold='true' max='100' min='0' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[none:product_group:nk]' value='76' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-line-pattern' value='solid' />
+                <format attr='line-interpolation' value='linear' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[sum:total_adjustments:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-line-pattern' value='solid' />
+                <format attr='line-interpolation' value='linear' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[none:cumulative_adjustment_share_pct:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-line-pattern' value='solid' />
+                <format attr='line-interpolation' value='linear' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1yk0qow0h1qe040zp3n2q0woosvw].[sum:total_adjustments:qk] + [federated.1yk0qow0h1qe040zp3n2q0woosvw].[none:cumulative_adjustment_share_pct:qk])</rows>
+        <cols>[federated.1yk0qow0h1qe040zp3n2q0woosvw].[none:product_group:nk]</cols>
+      </table>
+      <simple-id uuid='{1F609805-925F-4D0B-8857-402AB5DCB65A}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98306' id='7' param='horz' type-v2='layout-flow' w='99064' x='468' y='847'>
+            <zone h='98306' id='5' type-v2='layout-basic' w='99064' x='468' y='847'>
+              <zone h='49153' id='3' name='Total Adjustments and Adjustment Share %' w='59977' x='468' y='847'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49153' id='9' name='Top Tanks by Total Adjustment Burden' w='49532' x='468' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49153' id='11' name='Top 5 Tank-Size Combinations by Total Adjustments' w='39087' x='60445' y='847'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49153' id='12' name='30-Day Rolling Average of Adjustments and Adjusted Batch Rate' w='49532' x='50000' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='12076' id='10' name='Top Tanks by Total Adjustment Burden' pane-specification-id='1' param='[federated.0lydw730634yvk15768620yvrm8d].[none:area:nk]' type-v2='color' w='6027' x='42130' y='52542' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1250' minheight='1250' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='14' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98306' id='13' param='vert' type-v2='layout-flow' w='99064' x='468' y='847'>
+                <zone fixed-size='280' h='49153' id='3' is-fixed='true' name='Total Adjustments and Adjustment Share %' w='59977' x='468' y='847'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49153' id='11' is-fixed='true' name='Top 5 Tank-Size Combinations by Total Adjustments' w='39087' x='60445' y='847'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49153' id='9' is-fixed='true' name='Top Tanks by Total Adjustment Burden' w='49532' x='468' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12076' id='10' name='Top Tanks by Total Adjustment Burden' pane-specification-id='1' param='[federated.0lydw730634yvk15768620yvrm8d].[none:area:nk]' type-v2='color' w='6027' x='42130' y='52542'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49153' id='12' is-fixed='true' name='30-Day Rolling Average of Adjustments and Adjusted Batch Rate' w='49532' x='50000' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{5A99D6D9-BA6C-4F1E-AEEF-35DB6FA89559}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='114'>
+    <window class='worksheet' name='Total Adjustments and Adjustment Share %'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='4' param='[federated.1yk0qow0h1qe040zp3n2q0woosvw].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1yk0qow0h1qe040zp3n2q0woosvw].[:Measure Names]</field>
+            <field>[federated.1yk0qow0h1qe040zp3n2q0woosvw].[none:product_group:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{03537C3B-2FC4-4CA9-88F0-4FE58DE2D358}' />
+    </window>
+    <window class='worksheet' name='Top Tanks by Total Adjustment Burden'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0lydw730634yvk15768620yvrm8d].[none:area:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0lydw730634yvk15768620yvrm8d].[none:area:nk]</field>
+            <field>[federated.0lydw730634yvk15768620yvrm8d].[none:tank_id:nk]</field>
+            <field>[federated.0lydw730634yvk15768620yvrm8d].[none:total_adjustments:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8E3E265B-1B2B-4F65-94B5-BAA3BC23F280}' />
+    </window>
+    <window class='worksheet' name='30-Day Rolling Average of Adjustments and Adjusted Batch Rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0wdhq1b0wgdocg1h0wu6e15o68wv].[yr:production_date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{BBFA0C72-0BB3-4028-9DDB-E19A24F4C9E0}' />
+    </window>
+    <window class='worksheet' name='Top 5 Tank-Size Combinations by Total Adjustments'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1rarssu1pvughv0zkq6611kmk32p].[:Measure Names]</field>
+            <field>[federated.1rarssu1pvughv0zkq6611kmk32p].[none:tank_id:ok]</field>
+            <field>[federated.1rarssu1pvughv0zkq6611kmk32p].[none:tank_size:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5FBD09D0-9A15-452B-A18A-C73468000370}' />
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.07bbszx0ck9ucs1c5jasq07s5y2c].[none:area:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F7018B3C-E8D4-4E57-A945-E6566BD1C89D}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='30-Day Rolling Average of Adjustments and Adjusted Batch Rate'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Top 5 Tank-Size Combinations by Total Adjustments' />
+        <viewpoint name='Top Tanks by Total Adjustment Burden'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0lydw730634yvk15768620yvrm8d].[none:area:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Total Adjustments and Adjustment Share %'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{EDA1D9C0-42DE-41D3-8262-3B78F02D4A0C}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='30-Day Rolling Average of Adjustments and Adjusted Batch Rate' width='192'>
+      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
+      Fg0IC5m5SowAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAfx0lEQVR4nO3d6XMc953f8Xcfc18ABvfJAzzESxQpiqRkU/Za9q6vcsUpZzdJuSpbtbu5
+      qlKVypM83PwHeZbKw1yV2krt1q4rZYeyLVuSJUriTZAgcRLnABjMYI6es69fHoACSWFAESDu
+      +b2ekDPo4wtMf6b71/37dStCCIEk1Sl1pwuQpJ0kAyDVNRkAqa7JAEh1TQZAqmsrARBCMHD7
+      C96/epW7gyPPTZTJZlfNODD4YOX/EyMPeDQ+vfI6nxhiaslkYWGh9lqFIJtZvcwXyWYz65oe
+      4PHAIMUn/y+kpvjk5uDKz1zb5OHQ0No1wrprLOaymO7y/+1yng9//3s+/vQ6izOPmMtZL72c
+      ydFHfH7rHq5jMTWdWFcN0vroX/5HURROv3GB4rVPef1EP48GbrGQynLs1Ou8f/WXXLx8hQAV
+      5pKL9B0/Rz6fX55RCGYWMgiR4djBbu7d/Jz03Bidb/VBpcrU1CS9vb2Mj42DXWYxV+JAXy/v
+      X/0t7773HsnJEYxCEU84Cqqf13rjDE0maO3opZKZJVeoEO/s5e61D3ntjUtEPTYLmQKvnXqD
+      aEBncOAOS/kyb751hmu/v46twrvfvsKdzz9lamSW750+AcCDR1NYQuACE0MPSKazVFUfIX+A
+      7MIkSkMf6ZkxYgGd4el5evv6+P37v+Hc5XcQpSUyeQPT0bAFvHvpda7fGiAUa6bJL5hZXEIP
+      RClNDELXUS6/cZal6SFCHUc5f7SD+eHP+WLwMxrCft46dYiBoTH8oUZiYQ/puQTtXd08npql
+      qbWT1/r7SKRzxFAYGHpEd8+Rndgu6kbNQyAhYDFX5sq3rjA8NMzh/n6OHe7Fdmx0r8LQ4NDK
+      tK5lMD4+xcTYGIVSmqLbwNmTxwBBYiZBYnYGgMmJSfKGgW27xJpa6D/cT29nC7arc+FEN5Gu
+      E2h2lZs3b2KbJgP375MrO7zz9mXSySR9hw5z5sRR8nkDy3LQdRWBwHZsqplJJhZzhBu7Odjg
+      Z3L8AcHuMxzvP7D8+7gOk9MTVBeneTSTIbGY58KF8/h1mJ1JYCzOYFRhcmKCYtGgWrXw+iMc
+      OtzPa0cOkitYXLp4kWAkRIPfw4PbN8hUbO4N3GNhMcv5y29jlQt0dfVw6sxZfDq0H3mTqDXP
+      L/7vVSw0zpx/C69q4joOQqiMDo8yMfqI3uNnGR68h2VbDAzcB6CvPY6BjTE/x52bXzAwPLW1
+      W0EdW7MNYJXy3Pzic8JNbVjFPCMTs4wMj4JQUJSn184e3R3gBz/7U/70p+9x7+EsqcQIAw+f
+      OYSyq9y6dZslo0ws1oBXFBieWCS3tMDsfHrVetvbWvEFQpw4fuy59zXX5N6jUaINMfxqlaHx
+      BMIp8/hxAoTg2et5/mic8Qc3GB6bAMBYGOPYm+/x3Z/8YxYfD1ItLHH79h0q9vL0Xr+fB3du
+      MDW3SCAcJRb2Mzg4hFM1GBqbXFVja1cHXt3LqZMnn3vfH/IwcOsOpgv5VILFvIkHF/uZS43j
+      w8O4moorBHowRnMsSGdHBx5fgJOvHQegs/cwilDpP9gNgCJbaltGWetKsBAulYpJIOBHCBfX
+      FSgIHKHg0bU1F+g6Fi4a2eQ0D8YXufL2eSzLwuv1IoSLadn4vF5c10UAmvrVT1dg2w6arqM8
+      V4/AcVw0TcE0bXw+LwCWZaHpOqqiPLcU27JQa7z/5e9m2Q5WMcdH1x/w/feuYK7UKDBNE6/P
+      B0LguC66tvr3dRwHRVFR1eeqxLYddF1/Mo2NomrP1SCEWPl7PLc820bVNBRFWQ40y4eljuOg
+      1Vi/tDnWDIAk1QO5c5Xq2qYGwLbtzVycJG25TQ1AuVzezMVJ0paTh0D7mWNy9eqveDj8GNO0
+      qJRLOK5LNjXFyNg8ruviOhZGLk0hkyKdmODjTz8nW6hgWRalYnF5GtfFcRzKlcpO/0abTv/6
+      SaQ9y7XJ5gxCM48YHH5MxGvhlHJYngDFZJlM8iiZ6hKHWmPYlkrGKNLVHOb6h/8PraEDK5cl
+      k0lwqP8sc9kkmgPf/8Efs5/OSW3qWSDDMIhEIpu1OOlVORZT82naYz4yVY2FiYcEG1pIzs0S
+      CUXIFiw6u6KoWgBNgaawl1sDw7S1t9HZe4DB29dpbGpkftGgXFmiubWP86+f/Pr17iErARBC
+      UCgUXmlhpVKJYDC4KYVJu4tlWXg8np0uY9M91xdoM7695R5A2g6u65KplEmXiiQLBZbKJRaL
+      BSzHQVEUmgJB4sEQLaEQwa9cdHyWbANIu9azG3mqWCRVKpIuFanaNqqi0PhkI28OhjjUFKcp
+      GMSvr28vJQMg7ShXuGTLFVKlAulSiVRx+d+qbaOqCg3+wMpGfqCxaUMb+YvIAEhb7ulGXnzy
+      bb68kVdsC01Rifr9tITCNAWDnOvqIR4I4t+m9saWB6D0Nz/HSdze6tUAoPW9Q/Cn/3Vb1iWt
+      VqhWSRh5lkpFFp9s5CXLRFc1oj4fLeEwTYHljbwpECSwCxrVcg8gbYjlOMwZeSYySySMPJly
+      iYDuoSfWQFMwyBud3cSDoV2xkb+IDID0tYQQLJVLTGUzTGYzJAsFVEWhPRKhJ9bAmfZOGgKB
+      nS5zQ2QApFWKpslMLstULsNsLkfRMmkNhemONfBmVw8dkWiNcRx7kwxAnXOFIFMuMbSYZCqX
+      IVsuE/B46Io20NfQxDf6DhLwrH0efa9bdwCKRo5csUrIp2IKHWGW8IcbiIblFeC9oFCtMpPP
+      Mp3LMp3NUnVsmoMhDjc1893+Y8SDoZ0ucVutOwC5bIbFXBmaojh2CU3XyWXShIN+HMdZNSZg
+      O8ebCSHkmIRn2K7LnJFnOp9lzjBYKpfwazo9sRi9sQYudfWuaqTW299v3QHQNJ2gz4fjOLiK
+      ilst4QnEUFUVTdNWxsN+yVw9JHfLKIqyav314suG6nQ2y0R2iYWCgaaotD1pqJ5u76JxjzZU
+      t9K6t5a2zm7atqISaV0c12Uis8R4Jk0in6NgLjdUu6KxfddQ3Ur1+XW5RwkhmDPy3JidZiqb
+      oT/ewqGmJt7pO0hwHzdUt5IMwB6wVCpyKzHLcCpJRyTK6x1d/Oj4yZq3fJHWRwZglyqaVe7N
+      z/EwOY9P93CmvZN3Dx7GI+8RtKlkAHYR07EZWkxybz5BxbY51dbBP339/K7vTrCXyQDsMFe4
+      PF5a4u7cLPMFg2Mtrfzo+ElifnnGZjvIAOwAIQTJQoFbiRlG04scbIpzue8gHZHoTpdWd2QA
+      tlG+UuFWYobB5DytoTBnO7v446PHZWN2B8kAbLGKbXNvbpZ78wn8uoczHZ38xYVLeDX5p98N
+      5KewBWzX5dHiAvfmEpQsi5Nt7fzZ6+cIe307XZr0FTIAm8QVgsnsEncSsywUChyOx/nukWO0
+      hMI7XZr0AjIAr0AIQbJY4O7cLKPpFJ3RGBe6e+mONex0adJLkgHYAKNaYWB+jnvzCWL+AOe7
+      evjO4aOy780eJAPwkkzH5v7CPHcSswCc6+rmz89fxFenvU/3i5qf3s2bNzl//vx217IrmbbN
+      takJBhbmeKOzm5+dfp2Iz7/TZUmbZM0AAHUdAtd1uTE7zc3EDOc6u/lXF99Bl4c4+86a+++b
+      N2+SSCT48Y9//Nz7Qjik0lliIT9VoYNVwheK4dX3x8bhCpd7c3Ncm5rgdHsHf/HmJdkBbR+r
+      GYC/+qu/WnOGyZFhlHATlfISwnVRVBWRM+ju7t7zQyKH0il+Nz7CwYZGfn72PH5dBznMcl9b
+      cw+Qy+WZnZ7i2KlTzz0QwRcMkslm8fl1XBcU10TzRfbskEghBJPZDB+MjdAWifDn5y8SesHd
+      hKX9Zc2tZXLsAcm5HF3HTxF7Zqr2rl7aOgWKAoLlZ9oqe/DYWAjBdC7Lb8eGCXt9/PTkmT17
+      cydp42oGQAiTgfsjRINR1K98gyuKsvwwZ1h+kPUe7MiVKha5OvIQVVH5wbETtIXlMw3qVc0A
+      KIqX48cPY7l+/Puo/Zcpl/jd+CiFapX3+o/SGY3tdEnSDlvzEGjvfa+vLV+p8LvxURYKef7o
+      8FH64807XZK0S6wZgIA/QGYuTdUBzx7dC1Rtm48nxpnILPHNA4f4yYlTO12StMusGQDHKvNo
+      fJpv7L32LdUnV2/vL8xx5cBhvnP4yEq7RZKetWYAFpIp+np79lQb1xWCz6YmuJmY4XxnN//6
+      4juyg5r0QmsGwEUlFo3sibaAi8LD6Glu+y9zRgj+5VuX0dU9etwmbas1A3D63FsEhIu1i9sA
+      AhiKnOTT+BUOFUb4U/suTX1/vtNlSXvImtcBPv/4Y/yxZr7zXsd21/S1BDAdOMAnzd+itTrP
+      n03/N4JOCS30zk6XJu0xa14HaGlrZPj+MMa3v0XjLunyLoCEv4ePm79N1M7zo7m/JWIbO12W
+      tIetuWn39fRRMj2Ed8nGn/Y280HLH6MLh+8kf0WLubjTJUn7QM3N23UsiqUSmflZ8hWbuH9n
+      UuCiMBvoZTR8DEOP8m7qN7RWF3akFml/qrllF9Nz3Lo3iFGqMj0xQfx4/7YWJYDh8Gt8Gn+X
+      g8UxLqU/IuBWtrUGqT7UDECktZe+7sfklgz6j2zvxg+Q8zQwG+jln8z8d0JOadvXL9WPmleJ
+      hBB0trVgq168O3AKtMHK8keLV+XGL225mnuASjbBneFpDMNg9fYvKJcraLj7ckikVF9qBiDQ
+      2MVPftiFXa2u+lnZyPJgdJa25tjeHBLpWJi/+DfbUxCgnf4ZWv/3tm190vrUbgRnF7l57yHg
+      5fKVS8/tBXJ5A7NUoGoGEGLvDYkUwsaZub5NFYF+6N26fXLlXlDzkwk1tOBR7zJw6yFn37n0
+      XFeI9q5e2rt6EcLd00MiJQlecCHs8NEz+PQwvjW2bUVR9+yQSEn60hpngUx+/atfMj2XwnG3
+      uyRJ2j41A6AoXvoO9BBQBdY2NmIlabvVPASySxlauw+SjZaIyvabtI/V3ANYuTk+HxjHrVaR
+      90ST9rOa3+++lsP87IfH8O/WkTCStElqBkDVfcgbgEv1QJ7Al+qaDIBU12QApLomAyDVNXmW
+      fxewxz6g/It/t23rC/7879Caj27b+nYzuQeQ6poMgFTXZACkuiYDINW1dTeCi0aWxaUCIZ9C
+      1dXBLuMLxWiJN25FfZK0pdYdAF3TEApYDginiqZ7qZQM3MbYHhkT7GxPMU+47tfX5LjbO+jC
+      dRyEfPQrsIEA5HI5hOviCfjQ8CGsMr5I454aE7ydVPUlHt26zUNKVU1Dk+OUgQ0EoLWjm9at
+      qESSdoD8GpBqMm/9T+yx327LuhR/jMCP//O2rOurZACkmtzs5LbdPkYJ7txTO+VpUKmuyQBI
+      dU0GQKprMgBSXZMBkOqaPAsk7RnlX/1HRGFzH5ElAyDtGc78ACI7uanLlIdAUl2TAZDqmgyA
+      VNdkAKS69moBEIKZqQkW05lNKkeSttcrBUAA6pMBMZK0F73SaVAFUHHwReRwSGlvWgmAEIJC
+      obDuBYQiDQAYhkGptPrB1lbve7iNp16hxJenNvTgGM/vjYQQKM88x0w4NubJn29LPQBO+DDV
+      Z2oST8aIPluTqzdjbWNNruNF/Zqa7OazOCe35zKR4gkivuZzAzAP/xhRyW3uuoXYvFG7hmEQ
+      iUQ2a3GbwnVd1F30FEshBEIIWdPX2K7PbWvXIASLC3MYxfILJ8tn0iwuZRHCZWZqAqNYAcC1
+      qlgvMV7crPFA7y+t54/oVgtMTs9SsWoPnHddm2r11cYUK4ryXE2VosFcMkU2m33pZeQzqeW/
+      l+swMz2FUapsWk2VksHcQmrdyygbxsrThMxygenEcpeF5HyCdGb5W9syS+SyeWwXwMEwVh8x
+      fGmtz61QKJBNpyhXSlRfsHGUCzkSC4tA7W3wy7/3lu7jBMt7BU1TGE0uEPR5mZ1P0dESw3YV
+      qiWDvv7jZDJpqsJHPBbB4wuwlJplZryE4pjorV1U0ykU3UtTY5hK2aFaNTAthUgsAKgYmSWC
+      oTBNre00RsMbrtetGgSa2pmbeERViaLaeTRFxfbF8NoFGpobyc7lsT0u3mAIx7JxqyU6eg4S
+      Cvg2tM5kOkNvby8Tj0eZT0wTijSRSi7Q0NKMcAVutYTi1XEsL8It0XfoCJmlJUzFR1MkgCcQ
+      Ir0wy0ypiO4N4dPA1HR8wiFXKNHY3Ewmk8ODSzgcIpMvEQzqtLb1EA6urjmZytDb283UxAQo
+      KpVKCQeBrvqWnxft0cFx8AVC2OUSlaqF7tVxKiauX6Ml3oFazZPO5GltjrO0lEb1FDGyaVxh
+      g62QTC8Ra4ywNJckEPSRL5TQNJ3Wzi6aG158BJHPZiiXC5hJjeaWGAvJDEGvhqZ7KBQreLwK
+      HZ19lHNZMgWLlqYGDKMIqsrk2BiNzU0spLLEoyEK2cWtvw4QDAYpFYqoikqhUCQYDGCZVVA0
+      omE/eaOMqnkw8lkURWEptYA3EEb3emnr7MSjgMfrIxyN0trShONYOLZLOBohFIoQCYVpaIgR
+      a2ggt45v0ZpUDwszk4RjjbS3taHpHmLxFtxqkWhDjGw2h6p5aG1pAhRKpRINsQjZ3MbPggW8
+      GjNzSfz+ALrHh+paBEMBdH+IWCSIpnuIRKK0t7URCwfIGSVUXcfI5UBRWFpcwBcI4/H6iYSD
+      VMoldH+YeEMMfyiCVani93iIRgIY5SrhSIRotLHmxg8Q8OnMJJJP7vKh0hRvoaU5jm1WESho
+      qoqm65SMLKYDzc0tgIOiaTTGGsjlslQdgWqWMF1oae/kyKEDKKqKx+PF69WJxGIYuRwt7e34
+      PBo+f4jW1jj5l/j8GmMB9EATqqZiliv4vDqqqiAUhVAkQtOTz8lBxSzmcRWVYNBPsVTEFwhi
+      WSYBvw+f34Np71AboFwuEwgE1r18IWzSi2kijS34PDt7vFouGpRMl3hjbEfreJZVKZMplGhp
+      jrPZd6PZ6Ge22+37RrAkvcjuafZL0g6QAZDqmgyAVNc2NQCaJh+sLe0tm9oIlqS9Rh4CSXVN
+      BkCqazIAUl2TAZDq2koAhBAM3P6C969e5e7gyJozCKvEtWvXuPr+Vcam5mpO4+YTPJiqNUxS
+      MDgwWHOebGqOj3/3az746FNSueLTZZklckXzuWmt3CyPZrJP6nZ5/9e/5tl+gQMPBilkFilW
+      a/fqrBQyVNbRqVO4Drl8/suK+OIPH3Ht0094PJt84XwPBgdefiXSjljpDaooCqffuEDx2qe8
+      fqKfRwO3WEhlee3cZSbuX6diWhw//w6t0SCXLl7ks+ufcbinnft3b5LJm1y8eJKPPrqFQOHd
+      cz3kSxojwyMEvTCzkKH/+CniMT/jww9Ip+c5cuYchUyenhY/i2aQ7uYOTvTOko6cojHg8LsP
+      PsAXidPtz/PxY4sffvtNxgYfYWlezh2IkC97ACgkx1EdwfBsjt5wlVv3x5hPZehtDiH8TUzO
+      zBL3CwwtxuSDu0RaOihO3iITOsKZnggj04tUSgUCHoWDJy+wNPWIfMXh3NnjXPvsHkJROXWs
+      i99+/AXvfff7tMXDuIqfC2+e4ONr99DsCr29XYyNT6MrDrOzc/T39zEyMUs6lyceDvI4kaSz
+      9whLM48oVCx6j7xOX0fTjn3o0lM1D4GEgMVcmSvfusKjgds4ePnmu1cYHrj9/HSAY9uUkyMk
+      0gUi8YN0BXwUgI/f/wVqJE7BMDAtC92znLXm9h6+8c1vMDo0xNTkKAP3h4k3Pt+FefT2HU6+
+      8y0ilkGgpZMjx08R9XuwhWBkbPS5aW/cekg4HmPo7g3u3h/i8tuX6WhtwlicIV9xmJ2bo5hJ
+      kMwWyOULKJpOR2cnJ0+fxc7Pc+j0JULhMBcvnSYxOs6dgUFK6WkeDE/S2N5Pu8+Dv6WD/iNH
+      aYsvd3ybnRzhtx/8gWhTE4mZWRAuU1PTPHrwgLMXLzMyOsnbly/R0hDixs1bWGaVgYEBKq7C
+      5YsXWJif2qSPT3pVa7YBrFKem198TripjYXEFNf+8CHxzoPPT+QajD9OAi5fvZjw9rt/xMjA
+      XYKRGOGAxuCj5Q03vTDLtU/+QLy9l2NdDUzkBYGvXD9r62njzrXPmUgZREJBpofuMfN4iFTR
+      wXGfrkkIBy3SxKULF2kIakSDHr64foO5xeXDL0VRSCWmuTc4goJKc0sLI0MP8QdDPLhzna+O
+      bVE1Py0tceKdh+hrfdqpT1FVkrOTLGaWuz2rqkYkEiaXy2NXC9y6fZt8ySTa1ErQq+HXHK7f
+      uEUqW6SjrY1AMMJrx4++xMchvapKIcPI49mXnn7NC2FCuFQqy32nP/3kMy5evoimrc6LZZlo
+      ugdVqd0BVwiBaZr4fL6V5bquQFNV7n7xIZGesxzqbFg1n1kto+p+dE3BcWxUVcOyLDxe7wu6
+      +gpM08Kj6/zul3/Pue/9lJDytD7LNFF1D5oKtu3UfHqjEC6OK9C/clXbdRxQ1VW/pxAulu3g
+      9XiefRPTsvB6vYDAth00Xd/0LsrSavdvfs6sYRJ0Sriaj1zRpqvZQ7oa4HtX3lo1vbwSLO0r
+      Nz77hGLJJNjUSpPXZDJlogmDUKyNN8+eXjW9DIBU1+Tt0aV9ZSBxl78f+D8rr//tN/49TaH4
+      mtPLAEj7Sr6S5eHC/ZXXplOlWi7wv//uH/hHP/gTUrkcuIJcKgmhBnkleK+6f/0jrn54nXKp
+      iOO4lMtl7g8M4rouyakhsmWXO7duY+10obvA6MggOvD+R5/Q19PBvQfX0f0R5man5B5grzp4
+      oAdnycPHv/klFUehZMP8bJKSq9OipPhiaB6zaHDi3Bs7Xeq2ivobeK3t6Z0IvZqP7r5jHD/x
+      BgvJJI8n5/jWN7/HzNQ0gUBANoL3KrOYYakEM+OPCMdiBEMRljIlYlE/DQGFtGExl1zi7bcv
+      IIcprW1TAlDrPo6StBNGUot8MP60L9ufnXmDmH/t27lsyiGQ67pyOKS0KxTMKuNL6ZXXluNy
+      +4truJFGbnz0W37w/R8hNJ1kYpZYg2wES3XA4w8xMfoAfzDMnds3SSfnKZsmmiZPg0r7TNjr
+      41DT0/P+Hk3l4KFDtHd3oCoa5YJBybTQdR+Oq2xOG8BxHHkIJO1Jm74H+IfB+8wX8l8/4Veo
+      isJfXri82eVIdSY5mmD4908HIp3/2TcIxEJrTr/pAUgYOSYyS+ueb63epJK0HtVChfTjhZXX
+      ju1w784tEksputq78PuDzE6M0NFzANuyZRtA2v9cxyUYjJHOpPGQRuDweGaKgO6RAZD2F1/Y
+      T/xg28prTdc4cuw4/lCIbHoRo1QlFgliOTYLc4svHwDHqrCQTBGORMkXykSDOhVHpTUunxAp
+      7R6t/Z209nfW/Fm8uZVn+4W2Nre9fABU3YdVzDBZdGgLqKRLNrrj4jbGcF135UmDr3JSybZf
+      7flbkuQYd6nO/83K68CB/4Di2YTu0Ha1hOIL4TddslWXkF/HEssPVxNCrJwGfZUuEbWGKErS
+      ejhODtt4ehZIVWzu3b2BrQYQWBzs7CCbL2LbNqOjoy8fAI8/RG/foS0pWpK20rHjJ/nwo48w
+      ynmEbZNemKXnyOs0t7TIRrC0v6ieRvTI07G/iuqjXCjR03uI3t5uzGqJ/kOHCYWjzHsVGQBp
+      f/HE3sATe34MRLwZ4s1Pzgw98wy7AwcPy85wUn2TAZDqmgyAVNdkAKS6JgMg1TUZAKmuyQBI
+      dU0GQKprL98XyCyzsLiI4+io+vI98Mu2Sk9X+1bWJ0lb6qUDoHk8WBUTf9hHLmsgIgFwTVzX
+      lb1BpT3rpQNQNXJUhEpI1fD6fQQ8HizdK3uDSnvaS29x/mic49HlftUtW1aOJG0v2QiW6poM
+      gFTXZACkuiYDINU1GQCprskASHVNBkCqa2sG4NHQQ/7+f/0P8vLirLSPrRkAq1Sg//gZVHnP
+      WmkfqxkAIUzGxyaZzxn45UGStI/V7AqhKF4aGiP4ggHEkz3Al71BwUvZNIkFdSqyN6i0x63Z
+      F6ijpZF74ynOP3n9ZW9QV1eJaQp5R+CVvUGlPW7NACykc+Rmxyg5ENOe9gaNB30UqxYNHh1T
+      9gaV9rg1t7hIKEBX/wmCTx79JXuDSvvRmgEwihVaW9rYyZNA07ksvxwa3NC8b3X38kZn9yZX
+      JO03awagtbWFjGHyyo+QfAVly3zuocfrcbR59X7qo//ySzIzqXUvS/Po/Oiv/9mG6pB2tzVP
+      g964eZfFmWkqznaXJEnbp2YAFMXLhcuXaWgMocsLYdI+tuZlLt2tEI61rfVjSdoX1gyAPxBi
+      anQIcycbAZK0xWo2gq1SlvsPHvA4maLn0RDnTh7b7rp2PdfO45QmNjSv6utA88mTybtB7QBY
+      DsWqw7EDfRw9fmS7a9oT7MJDCsN/vaF5Az1/SaDjp5tbkLQhNQ+BgrE4Z08exePzoSuyN5y0
+      f9XcA5Qzs9wbniafM/A8s/2bpomKSypbIB4LUrZVoiH/dtUqSZuuZgD8DZ2cPWYwOpnEBTTA
+      tU3GHk8R9oLrDTOfTCOESzjQs2Wd4VzH3fCyhCtWLW/jta1e1ivVJlzZ8W+XqBmAUi7FZCKJ
+      x+NdeU8IgW2WCcY7mJtbIBD24zhsaWc4Vdv44ZeiKquWt/HaVi/LfZXaFHXV8v72/l1SpeK6
+      l+XTdP7F+bc2XEu9qxmAUEMLfV0pRh6nVvoCaR4fp0+fRghBY1MTiqLsaDeJ/WYmlyVh5Nc9
+      X0D3bEE19WPNvkCm0KikEpQdiGhP31cUZeWbVF4k3p0+mXzM/YW5Dc37s1NnaQoGN7mi3atm
+      AIRwWFxYpLO7Z7vrkTZBulTccCdC0/lKW8cuUhj5Txtalif6OoGuf76hebfLmnuA9Pw0BSfA
+      aXkWtL4JG9sY2NCsqqdhk4vZfGt0htM4cOgg8bAfc+MnOyRp1/v/lyUBAiF3h4MAAAAASUVO
+      RK5CYII=
+    </thumbnail>
+    <thumbnail height='179' name='Sheet 5' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='144' name='Top 5 Tank-Size Combinations by Total Adjustments' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Top Tanks by Total Adjustment Burden' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Total Adjustments and Adjustment Share %' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

@@ -66,7 +66,7 @@ SELECT
         ORDER BY 100.0 * adjusted_batches / NULLIF(total_batches, 0) DESC
     ) AS adjusted_batch_rate_rank
 FROM tank_summary
-WHERE total_batches >= '5'
+WHERE total_batches >= 5
 ORDER BY total_adjustment_rank, tank_id;
 
 
@@ -99,7 +99,7 @@ SELECT
     ) AS adjusted_batch_rate_rank
 FROM tank_summary
 WHERE total_batches >= '5'
-ORDER BY adjusted_batch_rate_rank,tank_id, tank_size
+ORDER BY adjusted_batch_rate_rank,tank_id, tank_size;
 
 
 --Ranked Area analysis by adjustment rate--

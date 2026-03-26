@@ -4,7 +4,8 @@
 This project evaluates whether LCMS retention time can be predicted from RDKit-derived molecular descriptors and whether the resulting models recover descriptor relationships consistent with expected chromatographic behavior.
 
 ## Dataset Summary
-The notebook expects the dataset archive to remain at data/descriptors.zip within the project folder. 
+The notebook expects the dataset archive to remain at `data/descriptors.zip` within the project folder. If extracted manually, `descriptors.csv` should remain inside a `descriptors/` folder unless the file path in the notebook is updated.
+
 The dataset contains one row per molecule. Key fields include:
 
 - `rt` (retention time target)
@@ -39,7 +40,6 @@ This project therefore focused on descriptor-based modeling rather than relation
 ## Workflow
 
 ### Data Inspection
-
 Inspection steps included:
 - confirming row and column counts
 - checking data types
@@ -48,14 +48,12 @@ Inspection steps included:
 - reviewing summary statistics for the target variable
 
 ### Target Exploration
-
 This included:
 - summary statistics for `rt`
 - histogram of the target distribution
 - review of transformed target behavior for comparison
 
 ### Descriptor Screening
-
 Screening steps included:
 - removing zero-variance descriptor columns
 - computing descriptor correlations with `rt`
@@ -63,7 +61,6 @@ Screening steps included:
 - plotting the strongest correlation signals
 
 ### Model Development
-
 Models tested:
 - Mean baseline
 - Linear Regression
@@ -104,7 +101,7 @@ The untuned Random Forest achieved the strongest performance on the held-out tes
 - RMSE: 85.44
 - R²: 0.7623
 
-This outperformed both linear approaches and the tuned Random Forest, indicating that non-linear descriptor relationships improved predictive accuracy and that the constrained tuning search space reduced performance rather than improving it.
+This outperformed both linear approaches and the tuned Random Forest, indicating that non-linear descriptor relationships improved predictive accuracy. In this case, the reduced tuning search space lowered performance rather than improving it.
 
 Cross-validation and tuning were still useful for evaluating model stability and parameter sensitivity:
 - Best Ridge alpha: 0.01
@@ -120,11 +117,9 @@ Cross-validation and tuning were still useful for evaluating model stability and
 - Retention time showed strong predictability from the available 2D molecular descriptors.
 - Linear and Ridge regression provided similar baseline performance, indicating a meaningful but limited linear signal.
 - The untuned Random Forest materially improved predictive performance over both linear models and the naive baseline.
-- The tuned Random Forest did not outperform the untuned Random Forest on the held-out test set.
-- Error analysis showed that model performance was strongest in the mid retention range and weaker at both extremes.
+- Error analysis showed that performance was strongest in the mid retention range and weaker at both extremes.
 - The model systematically overpredicted low-retention compounds and underpredicted high-retention compounds.
-- The most important predictor families were related to lipophilicity, surface area, charge distribution, and molecular size.
-- `MolLogP`, a descriptor of lipophilicity, remained the strongest Random Forest feature, which is consistent with expected reversed-phase LC behavior.
+- The most important predictor families were related to lipophilicity, surface area, charge distribution, and molecular size, with `MolLogP` remaining the strongest Random Forest feature.
 
 ## Interpretation
 Linear models were retained as interpretable baselines, even though Random Forest performed better overall. This allowed the project to show both predictive benchmarking and descriptor-level interpretation.
@@ -155,4 +150,4 @@ At a high level, the results support expected reversed-phase LC behavior: compou
 - `LCMS Retention Modelling.ipynb` — main modeling notebook
 - `LCMS Summary Presentation.pdf` — project summary document
 - `README.txt` — project overview, workflow, findings, and limitations
-- 'data/descriptors.zip` — source dataset archive used for the notebook
+- `data/descriptors.zip` — source dataset archive used for the notebook
