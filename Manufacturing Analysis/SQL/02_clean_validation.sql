@@ -63,9 +63,22 @@ SET Tank_ID = CASE
 	WHEN Tank_ID IN ('4T') THEN '4'
 	WHEN Tank_ID IN ('110','330','55','660','ETHEL','#?  #?') THEN NULL
 	WHEN Tank_ID IN ('PAIL','JUG') THEN 'GALLON'
+	WHEN Tank_ID IN ('9') and Status = 'Skirt' THEN NULL
+	WHEN Area = 'Powders' THEN NULL
 	ELSE Tank_ID
 END;
 
+--Clean Area. Moving tank_ids into correct area based on # of blends--
+UPDATE manufacturing.blend_analysis_clean
+SET Area = CASE
+	WHEN Tank_id IN ('1','2','3','4','5','6') THEN 'Mezzanine'
+	WHEN Tank_id IN ('7','8') THEN 'Skirt'
+	WHEN Tank_id IN ('9','10') THEN 'Acid/Corrosive'
+	WHEN Tank_id IN ('11','12','13') THEN 'Polish'
+	ELSE Area
+END;
+
+	
 --Clean Status. Intermediate statuses pushed ahead based on date--
 UPDATE manufacturing.blend_analysis_clean
 SET Status = CASE
