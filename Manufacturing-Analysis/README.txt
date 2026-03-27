@@ -125,13 +125,14 @@ This project produced the following technical artifacts:
 - Further review is needed to determine whether burden is driven primarily by equipment, formulation, scheduling, or other process factors.
 
 ## Repository Structure
-- `01_create_raw_table.sql` — raw SQL import table creation
-- `02_clean_validation.sql` — cleaning logic and validation checks
-- `03_analysis.sql` — rankings, trends, rolling averages, and Pareto analysis
-- `QC Blend Adjustment Monitoring.xlsx` — Excel dashboard workbook
-- `Manufacturing_Presentation_Summary.docx` — stakeholder-facing written summary
+- `SQL/01_create_raw_table.sql` — raw SQL import table creation
+- `SQL/02_clean_validation.sql` — cleaning logic and validation checks
+- `SQL/03_analysis.sql` — rankings, trends, rolling averages, and Pareto analysis
 - `data/QC Data.xlsx` — raw source workbook
-- `QC Blend Adjustment Monitoring.csv` — CSV export used for SQL import
+- 'tables/' - Tables for importing analysis queries into Tableau for visualization.
+- `QC Blend Adjustment Monitoring Dashboard.xlsx` — Excel dashboard workbook
+- `Manufacturing Presentation Summary.docx` — stakeholder-facing written summary
+- `QC Blend Adjustment Monitoring-SQL import.csv` — CSV export used for SQL import
 
 ## Conclusion
 This project shows how Excel and SQL can be used together to identify where manufacturing adjustment burden is concentrated and where targeted operational review is most likely to be useful. The final analysis highlights a small number of product groups, tanks, and operating contexts that account for a disproportionate share of total adjustments, making the project both analytically strong and operationally relevant.

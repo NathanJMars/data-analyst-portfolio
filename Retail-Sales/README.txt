@@ -97,5 +97,5 @@ This project produced the following technical outputs:
 - `SQL/03_data_analysis.sql` — analytical SQL queries used for dashboards and recommendations
 - `Sales Dashboard-overview.twb` — Tableau workbook for high-level sales context
 - `Sales Dashboard- Promotional Status.twb` — Tableau workbook for promotion and discount analysis
-- `Retail Sales Analysis_ Pricing, Promotions, and Revenue Optimization.pdf` — summary presentation
+- `Retail Sales Analysis Pricing, Promotions, and Revenue Optimization.pdf` — summary presentation
 - `README.txt` — project overview, workflow, findings, and limitations
